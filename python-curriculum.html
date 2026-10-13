@@ -14,6 +14,17 @@ header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur
 .course-overview{margin:15px 0;background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}
 .overview-head{padding:18px 20px 10px}.overview-head h2{font-size:21px;letter-spacing:-.035em;margin:3px 0 5px}.overview-head p{font-size:12px;color:var(--muted);margin:0;max-width:680px}
 .overview-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;padding:10px 20px 20px}
+.overview-stage{position:relative;width:100%;min-height:245px;overflow:hidden;border-radius:12px;background:linear-gradient(145deg,#f4f6ff,#f8fbff 55%,#e8f6f0);border:1px solid #e2e7f5;isolation:isolate}
+.overview-stage:before,.overview-stage:after{content:"";position:absolute;border-radius:50%;filter:blur(1px);z-index:-1;animation:orbitGlow 8s ease-in-out infinite alternate}
+.overview-stage:before{width:180px;height:180px;background:#b9c6ff55;top:-70px;left:-40px}.overview-stage:after{width:150px;height:150px;background:#9ddcc955;right:-40px;bottom:-70px;animation-delay:-3s}
+.stage-inner{padding:23px 18px 17px;text-align:center}.stage-topline{display:flex;justify-content:space-between;gap:8px;font-size:9px;font-weight:850;color:#6d7894;letter-spacing:.08em;text-transform:uppercase}
+.stage-title{font-size:clamp(22px,3vw,31px);font-weight:900;letter-spacing:-.06em;line-height:1.1;margin:22px 0 7px}.stage-title span{color:var(--blue)}.stage-subtitle{font-size:11px;color:#667286;margin:0 auto 17px;max-width:340px}
+.stage-code{max-width:370px;margin:0 auto;background:#1d2638;border-radius:10px;padding:12px 14px;text-align:left;box-shadow:0 12px 28px #1d26381a;color:#f0f3fb;font:11px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;min-height:76px}
+.code-line{display:block;white-space:pre-wrap}.code-muted{color:#94a3bd}.code-string{color:#a7e8c9}.stage-output{max-width:370px;margin:8px auto 0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 11px;border-radius:8px;background:#ffffffd9;border:1px solid #dfe5f2;font-size:10px;text-align:left}.stage-output b{color:var(--green)}.stage-progress{height:3px;background:#e3e8f4;max-width:370px;margin:14px auto 0;border-radius:9px;overflow:hidden}.stage-progress span{display:block;width:0;height:100%;background:var(--blue);border-radius:9px}
+.stage-controls{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}.stage-controls button{border:1px solid #d9e0f0;border-radius:8px;background:#fff;color:#34415b;padding:8px 11px;font-size:10px;font-weight:800}.stage-controls button.primary{background:var(--blue);border-color:var(--blue);color:#fff}.stage-controls button:focus-visible{outline:3px solid #a9b7ff;outline-offset:2px}.stage-status{min-height:18px;margin:8px auto 0;color:#63718a;font-size:10px}
+@keyframes orbitGlow{from{transform:translate3d(0,0,0) scale(.95)}to{transform:translate3d(16px,9px,0) scale(1.08)}}
+@media(max-width:680px){.overview-stage{min-height:245px}.stage-inner{padding:17px 12px 14px}.stage-title{margin-top:20px}.stage-code,.stage-output,.stage-progress{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.overview-stage:before,.overview-stage:after{animation:none}}
 .preview-frame{position:relative;display:flex;min-height:245px;align-items:center;justify-content:center;overflow:hidden;border-radius:12px;background:radial-gradient(ellipse at 50% 35%,#344db51c,transparent 56%),linear-gradient(135deg,#f3f5ff,#f8f8fc 55%,#e9f5f1);border:1px solid #e2e7f5}
 .preview-art{width:min(84%,370px);padding:22px;border:1px solid #d9def2;border-radius:14px;background:#ffffffd9;box-shadow:0 14px 40px #273a6810;text-align:center}
 .preview-icon{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 12px;border-radius:15px;background:#edf0ff;color:var(--blue);font-size:25px;font-weight:900}
@@ -34,17 +45,17 @@ header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur
 <section class="course-overview" id="course-overview" aria-labelledby="overviewTitle">
   <div class="overview-head"><span class="eyebrow">Course overview</span><h2 id="overviewTitle">Know the learning experience before you begin.</h2><p>A quick orientation to the course structure, practice style and outcomes. The introduction video is an optional part of this section and will appear here when an original video is published.</p></div>
   <div class="overview-grid">
-    <div class="preview-frame" id="overviewVideoFrame" aria-label="Python course introduction video area">
-      <div class="preview-art" id="overviewVideoFallback">
-        <div class="preview-icon" aria-hidden="true">Py</div>
-        <strong>Welcome to Python Academy</strong>
-        <p>Learn the concept, see it work, try it yourself, then apply it in a small project.</p>
-        <span class="preview-pill">INTRO VIDEO · COMING SOON</span>
+    <div class="overview-stage" id="overviewStage" aria-label="Interactive animated Python course introduction">
+      <div class="stage-inner">
+        <div class="stage-topline"><span>OPEN LEARNING HUB</span><span id="stageSceneLabel">01 / 03 · UNDERSTAND</span></div>
+        <div class="stage-title" id="stageTitle">Your first step into <span>Python</span></div>
+        <p class="stage-subtitle" id="stageSubtitle">A language for turning clear instructions into useful work.</p>
+        <div class="stage-code" aria-label="Animated Python code example"><span class="code-line code-muted" id="stageComment"># First, tell Python what to do</span><span class="code-line" id="stageCode">print(<span class="code-string">"Hello, Python!"</span>)</span></div>
+        <div class="stage-output"><span>PROGRAM OUTPUT</span><b id="stageOutput">Hello, Python!</b></div>
+        <div class="stage-progress" aria-hidden="true"><span id="stageProgressFill"></span></div>
+        <div class="stage-controls"><button type="button" id="stagePrev" aria-label="Previous overview scene">← Previous</button><button type="button" class="primary" id="stagePlay">Play introduction ▶</button><button type="button" id="stageNext">Next scene →</button></div>
+        <p class="stage-status" id="stageStatus" aria-live="polite">Interactive overview · 3 short scenes · No video or external service needed.</p>
       </div>
-      <video class="preview-video" id="overviewVideo" controls preload="metadata" playsinline hidden>
-        <source id="overviewVideoSource" src="" type="video/mp4">
-        Your browser does not support the video element.
-      </video>
     </div>
     <div class="overview-copy">
       <h3>What this course is designed to do</h3>
@@ -105,17 +116,33 @@ print(2 + 3)</pre><p>Run it from the terminal in the directory containing the fi
 <div id="syllabus"></div>
 </main><footer>Open Learning Hub · Python Academy · Progress is stored in this browser. No account or cross-device sync is provided.</footer>
 <script>
-// Set this to an original, hosted MP4 URL when the course introduction video is ready.
-const COURSE_OVERVIEW_VIDEO_URL = "";
-const overviewVideo = document.getElementById('overviewVideo');
-const overviewVideoSource = document.getElementById('overviewVideoSource');
-const overviewVideoFallback = document.getElementById('overviewVideoFallback');
-if (COURSE_OVERVIEW_VIDEO_URL) {
-  overviewVideoSource.src = COURSE_OVERVIEW_VIDEO_URL;
-  overviewVideo.hidden = false;
-  overviewVideoFallback.hidden = true;
-  overviewVideo.load();
+// Self-contained course overview: no video file, external service or network request.
+const overviewScenes = [
+  {label:"01 / 03 · UNDERSTAND",title:'Your first step into <span>Python</span>',subtitle:"A language for turning clear instructions into useful work.",comment:"# First, tell Python what to do",code:'print(<span class="code-string">"Hello, Python!"</span>)',output:"Hello, Python!",status:"Scene 1: Python follows the instructions you write.",progress:0},
+  {label:"02 / 03 · OBSERVE",title:'Code becomes <span>action</span>',subtitle:"The interpreter reads the instruction and runs it.",comment:"# The interpreter runs your code",code:'print(<span class="code-string">2 + 3</span>)',output:"5",status:"Scene 2: Python evaluates the expression and displays the result.",progress:50},
+  {label:"03 / 03 · APPLY",title:'Learn it. Then <span>use it.</span>',subtitle:"Understand a concept, inspect an example, practise and build.",comment:"# Small steps create useful tools",code:'total = 7 * 6\nprint(total)',output:"42",status:"Scene 3: combine what you learn into programs you can explain.",progress:100}
+];
+let overviewSceneIndex=0, overviewPlaying=false, overviewTimer=null;
+const stageEl=id=>document.getElementById(id);
+function renderOverviewScene(){
+ const scene=overviewScenes[overviewSceneIndex];
+ stageEl('stageSceneLabel').textContent=scene.label;
+ stageEl('stageTitle').innerHTML=scene.title;
+ stageEl('stageSubtitle').textContent=scene.subtitle;
+ stageEl('stageComment').textContent=scene.comment;
+ stageEl('stageCode').innerHTML=scene.code;
+ stageEl('stageOutput').textContent=scene.output;
+ stageEl('stageProgressFill').style.width=scene.progress+'%';
+ stageEl('stageStatus').textContent=scene.status;
+ stageEl('stagePrev').disabled=overviewSceneIndex===0;
+ stageEl('stageNext').disabled=overviewSceneIndex===overviewScenes.length-1;
 }
+function stopOverview(){overviewPlaying=false;if(overviewTimer!==null){clearInterval(overviewTimer);overviewTimer=null}stageEl('stagePlay').textContent='Play introduction ▶'}
+function stepOverview(){if(overviewSceneIndex<overviewScenes.length-1){overviewSceneIndex++;renderOverviewScene()}else{stopOverview();stageEl('stageStatus').textContent='Introduction complete. You are ready to preview Lesson 01.'}}
+stageEl('stagePrev').addEventListener('click',()=>{stopOverview();overviewSceneIndex=Math.max(0,overviewSceneIndex-1);renderOverviewScene()});
+stageEl('stageNext').addEventListener('click',()=>{stopOverview();overviewSceneIndex=Math.min(overviewScenes.length-1,overviewSceneIndex+1);renderOverviewScene()});
+stageEl('stagePlay').addEventListener('click',()=>{if(overviewPlaying){stopOverview();stageEl('stageStatus').textContent='Introduction paused. Use Next scene to continue.';return}if(overviewSceneIndex===overviewScenes.length-1)overviewSceneIndex=0;overviewPlaying=true;stageEl('stagePlay').textContent='Pause introduction Ⅱ';renderOverviewScene();overviewTimer=setInterval(()=>{if(overviewSceneIndex<overviewScenes.length-1)stepOverview();else stopOverview()},3200)});
+renderOverviewScene();
 const modules=[
 ["Python Foundations","Install and verify Python, understand syntax, types, input/output and your development environment.",["Python Overview, Installation and IDE Setup","Syntax, Comments and Indentation","Variables, Constants and Naming Rules","Built-in Data Types and Type Conversion","Input, Output and String Formatting","Operators and Expressions","Running Scripts, pip and Virtual Environments","Module Quiz"]],
 ["Control Flow and Logic","Use conditions and loops to express program decisions clearly.",["Boolean Logic and Comparisons","if, elif and else","Nested Conditions and Conditional Expressions","for Loops and while Loops","break, continue and pass","range, enumerate and zip","Module Quiz"]],
