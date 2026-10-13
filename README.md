@@ -13,70 +13,61 @@ A mobile-first learning academy for Workforce Management, Microsoft Excel, Power
 
 ## Current implementation
 
-The initial version is a self-contained static website in `index.html` with embedded CSS and JavaScript. It includes:
+- `index.html`: responsive academy catalogue, five tracks, search and filters, curriculum previews, local-browser exploration tracking, metadata and mobile navigation.
+- `wfm-curriculum.html`: four-track, 144-lesson WFM curriculum map informed by Call Centre Helper's published industry reference material. It links to original references and does not reproduce their articles, spreadsheets, assets or code.
+- `wfm-glossary.html`: searchable WFM glossary with 30 terms, illustrative formulas and metric-governance caveats.
+- `404.html`: branded not-found page.
+- `robots.txt`, `sitemap.xml`, `llms.txt`, `favicon.svg`: discovery and branding basics.
 
-- Five academy catalogue cards and curriculum maps.
-- Search and category filters.
-- Responsive navigation and course curriculum dialogs.
-- Local-browser tracking for academies explored.
-- Page title, description, canonical URL and social metadata.
-- Reduced-motion support, semantic landmarks and keyboard-accessible controls.
-- A standalone searchable WFM glossary with 30 terms, illustrative formulas and metric-governance caveats.
+**Important:** The 144 WFM entries are a curriculum map, not 144 completed lessons. Each lesson still needs source-grounded explanations, independently checked worked examples, exercises, answer explanations, assessments and appropriate original practice data. Browser progress is a local demonstration, not an authenticated learner record or certificate.
 
-**Important:** Curriculum maps are not yet complete courses. Each module still needs full lesson content, verified worked examples, exercises, answer explanations, assessments and downloadable practice datasets. Progress tracking is a local demonstration, not an authenticated learner record or certificate.
+## WFM source policy
+
+Call Centre Helper is a primary industry reference for WFM concepts, terminology, forecasting timelines, Erlang staffing, shrinkage, occupancy, scheduling and multichannel planning. The academy must author its own teaching content and web tools. Do not copy or redistribute publisher articles, downloadable workbooks, images, branding or code. Link to the original reference when it materially informs a lesson. Verify mathematical models independently and disclose assumptions and limitations.
 
 ## Run locally
 
-Open `index.html` in a modern browser. For a local HTTP server, use any static file server, for example:
+Open `index.html` in a modern browser. For a local HTTP server:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`. The glossary is available at `/wfm-glossary.html`.
+Then open `http://localhost:8000`. WFM pages: `/wfm-curriculum.html` and `/wfm-glossary.html`.
 
 ## Publish with GitHub Pages
 
 1. Open repository **Settings → Pages**.
 2. Select **Deploy from a branch**.
 3. Choose `main` and `/(root)`, then save.
-4. Wait for the Pages deployment to complete and verify the published URL on desktop and mobile.
+4. Wait for deployment to complete and verify the published URL on desktop and mobile.
 
-The expected project URL is `https://swapnild007.github.io/Open-learning-hub/`. A custom domain requires ownership of that domain and DNS configuration; it is not created by HTML changes alone.
+Expected project URL: `https://swapnild007.github.io/Open-learning-hub/`. A custom domain requires domain ownership and DNS configuration.
 
-## Planned delivery sequence
+## Prioritized delivery sequence
 
-### P0 — Foundation and verification
-- Confirm repository structure, published Pages URL and deployment status.
-- Validate responsive behaviour, links, accessibility, browser console and local progress.
+### P0 — Verification
+- Verify GitHub Pages deployment and published URLs.
+- Test mobile layouts, navigation, browser console, accessibility and metadata.
 - Add automated checks for broken links, HTML validity and accessibility regressions.
 
-### P1 — Learning content
-- Expand the WFM glossary into complete WFM foundations lessons.
-- Add forecasting examples in Excel, Python and R, with comparable test data and documented assumptions.
-- Develop Erlang staffing and multi-channel capacity labs.
-- Expand Excel, Power BI, Python and Power Automate into complete, assessed curricula.
+### P1 — Complete WFM content
+- Author the 144 WFM lessons in the four mapped tracks.
+- Build original browser-native tools for forecasting, Erlang staffing, shrinkage, scheduling and multichannel capacity planning.
+- Include assumptions, validation cases, worked examples, exercises and source references.
+- Compare model outputs with independently calculated test cases before presenting them as reliable.
+
+### P1 — Other academies
+- Expand Excel, Power BI, Python and Power Automate into complete assessed curricula.
 
 ### P2 — Learning platform capabilities
 - Add lesson-level progress, bookmarks, quiz scoring and printable project briefs.
-- Add source references, content review dates, version notes and quality checks.
+- Add source review dates, content versioning and ongoing quality checks.
 
 ## Curriculum quality standard
 
-Each full lesson should include:
-1. Learning objectives and prerequisites.
-2. Clear explanation of concepts, terms and assumptions.
-3. A worked example with reproducible inputs and expected output.
-4. A hands-on lab with a defined deliverable.
-5. Common mistakes and debugging guidance.
-6. Knowledge check with explained answers.
-7. A practical workplace scenario.
-8. References to official documentation where relevant.
+Each complete lesson should include learning objectives, prerequisites, an explanation of concepts and assumptions, a reproducible worked example, a hands-on lab, common mistakes, a knowledge check with explained answers, a workplace scenario and references to authoritative documentation.
 
 ## Technical constraints
 
-This first version has no backend and does not send personal data to a server. Browser-local progress can be lost when site data is cleared and does not sync across devices. Do not enter confidential workplace data into public examples.
-
-## Contributing
-
-Keep lessons accurate, version-aware, practical and clearly sourced. Never label a lesson complete solely because a curriculum card or placeholder exists.
+This is a static site with no backend. Browser-local progress can be lost when site data is cleared and does not sync across devices. Never use confidential workplace data in public examples.
