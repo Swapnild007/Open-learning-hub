@@ -21,6 +21,7 @@ The initial version is a self-contained static website in `index.html` with embe
 - Local-browser tracking for academies explored.
 - Page title, description, canonical URL and social metadata.
 - Reduced-motion support, semantic landmarks and keyboard-accessible controls.
+- A standalone searchable WFM glossary with 30 terms, illustrative formulas and metric-governance caveats.
 
 **Important:** Curriculum maps are not yet complete courses. Each module still needs full lesson content, verified worked examples, exercises, answer explanations, assessments and downloadable practice datasets. Progress tracking is a local demonstration, not an authenticated learner record or certificate.
 
@@ -32,7 +33,7 @@ Open `index.html` in a modern browser. For a local HTTP server, use any static f
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://localhost:8000`. The glossary is available at `/wfm-glossary.html`.
 
 ## Publish with GitHub Pages
 
@@ -48,10 +49,10 @@ The expected project URL is `https://swapnild007.github.io/Open-learning-hub/`. 
 ### P0 — Foundation and verification
 - Confirm repository structure, published Pages URL and deployment status.
 - Validate responsive behaviour, links, accessibility, browser console and local progress.
-- Add a custom not-found page and deployment guidance.
+- Add automated checks for broken links, HTML validity and accessibility regressions.
 
 ### P1 — Learning content
-- Build the WFM glossary and foundational WFM lessons first.
+- Expand the WFM glossary into complete WFM foundations lessons.
 - Add forecasting examples in Excel, Python and R, with comparable test data and documented assumptions.
 - Develop Erlang staffing and multi-channel capacity labs.
 - Expand Excel, Power BI, Python and Power Automate into complete, assessed curricula.
@@ -59,7 +60,6 @@ The expected project URL is `https://swapnild007.github.io/Open-learning-hub/`. 
 ### P2 — Learning platform capabilities
 - Add lesson-level progress, bookmarks, quiz scoring and printable project briefs.
 - Add source references, content review dates, version notes and quality checks.
-- Add automated checks for broken links, HTML validity and accessibility regressions.
 
 ## Curriculum quality standard
 
