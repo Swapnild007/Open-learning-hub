@@ -14,7 +14,7 @@ A mobile-first learning academy for Workforce Management, Microsoft Excel, Power
 ## Current implementation
 
 - `index.html`: responsive academy catalogue, five tracks, search and filters, curriculum previews, local-browser exploration tracking, metadata and mobile navigation.
-- `wfm-curriculum.html`: a self-paced WFM learning experience with one fully authored interactive KPI lesson, four-stage/24-mission course map, browser-local lesson progress, model-answer checks and a supporting workload Practice Lab. It uses original teaching content and links to Call Centre Helper references.
+- `wfm-curriculum.html`: a self-paced WFM learning experience with one fully authored interactive KPI lesson, four-stage/24-mission course map, browser-local resume/completion tracking gated by the lesson knowledge check, model-answer feedback and a supporting workload Practice Lab. It uses original teaching content and links to Call Centre Helper references.
 - `wfm-glossary.html`: searchable A–Z WFM glossary with 53 terms, illustrative formulas and metric-governance caveats.
 - `404.html`: branded not-found page.
 - `robots.txt`, `sitemap.xml`, `llms.txt`, `favicon.svg`: discovery and branding basics.
