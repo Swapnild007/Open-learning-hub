@@ -1,0 +1,20 @@
+# Open Learning Hub
+
+> A practical, self-paced learning academy for workforce management, Excel, Power BI, Python and Power Automate.
+
+## Primary pages
+- https://swapnild007.github.io/Open-learning-hub/
+- https://swapnild007.github.io/Open-learning-hub/wfm-glossary.html
+
+## Learning tracks
+- Workforce Management: glossary, forecasting, Erlang staffing, scheduling and multi-channel capacity planning.
+- Excel: formulas, dashboards, PivotTables, Power Query and Power Pivot.
+- Power BI: data modelling, DAX, dashboards and performance.
+- Python: programming foundations, data analysis, testing and automation.
+- Power Automate: workflow design, approvals, reliability and governance.
+
+## Content status
+The site currently provides a course catalogue and curriculum maps plus a standalone WFM glossary. Curriculum maps are not equivalent to complete courses. Lesson depth, examples, labs and assessments are being built incrementally.
+
+## Quality notes
+Educational content should state assumptions, show reproducible examples, cite authoritative references and distinguish illustrative formulas from organisation-specific KPI definitions.
