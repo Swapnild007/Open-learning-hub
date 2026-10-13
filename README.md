@@ -14,12 +14,12 @@ A mobile-first learning academy for Workforce Management, Microsoft Excel, Power
 ## Current implementation
 
 - `index.html`: responsive academy catalogue, five tracks, search and filters, curriculum previews, local-browser exploration tracking, metadata and mobile navigation.
-- `wfm-curriculum.html`: four-track, 144-lesson WFM curriculum map informed by Call Centre Helper's published industry reference material. It links to original references and does not reproduce their articles, spreadsheets, assets or code.
-- `wfm-glossary.html`: searchable WFM glossary with 30 terms, illustrative formulas and metric-governance caveats.
+- `wfm-curriculum.html`: 24 practical WFM missions across four stages, including expandable mission briefs, model-answer reveals and an interactive workload practice bench. It uses original learning content and links to Call Centre Helper references.
+- `wfm-glossary.html`: searchable A–Z WFM glossary with 53 terms, illustrative formulas and metric-governance caveats.
 - `404.html`: branded not-found page.
 - `robots.txt`, `sitemap.xml`, `llms.txt`, `favicon.svg`: discovery and branding basics.
 
-**Important:** The 144 WFM entries are a curriculum map, not 144 completed lessons. Each lesson still needs source-grounded explanations, independently checked worked examples, exercises, answer explanations, assessments and appropriate original practice data. Browser progress is a local demonstration, not an authenticated learner record or certificate.
+**Important:** The 24 WFM entries are practical mission briefs, not 24 fully authored course chapters. The page includes a working workload practice bench; deeper interactive labs and complete mission-specific exercises should be built only where they add distinct practical value. Browser progress is a local demonstration, not an authenticated learner record or certificate.
 
 ## WFM source policy
 
@@ -52,7 +52,7 @@ Expected project URL: `https://swapnild007.github.io/Open-learning-hub/`. A cust
 - Add automated checks for broken links, HTML validity and accessibility regressions.
 
 ### P1 — Complete WFM content
-- Author the 144 WFM lessons in the four mapped tracks.
+- Turn the 24 WFM missions into complete guided lessons with mission-specific inputs, exercises, validated answers and clear workplace deliverables. Avoid splitting useful topics into unnecessary micro-lessons.
 - Build original browser-native tools for forecasting, Erlang staffing, shrinkage, scheduling and multichannel capacity planning.
 - Include assumptions, validation cases, worked examples, exercises and source references.
 - Compare model outputs with independently calculated test cases before presenting them as reliable.
