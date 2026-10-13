@@ -158,7 +158,7 @@ const moduleProgress=JSON.parse(localStorage.getItem('olh-module-progress')||'{}
 let activeCourseKey='',activeModuleIndex=0;
 function renderModule(){
  const c=curriculum[activeCourseKey];if(!c)return;
- const m=c.modules[activeModuleIndex];body.replaceChildren();
+ const m=c.modules[activeModuleIndex];body.replaceChildren();const intro=document.createElement('p');intro.textContent=c.intro;body.append(intro);
  const progress=document.createElement('div');progress.className='module-progress';
  const progressLabel=document.createElement('span');progressLabel.className='small';progressLabel.textContent='Module '+(activeModuleIndex+1)+' of '+c.modules.length;
  const track=document.createElement('div');track.className='module-track';const fill=document.createElement('span');fill.style.width=((activeModuleIndex+1)/c.modules.length*100)+'%';track.append(fill);progress.append(progressLabel,track);body.append(progress);
