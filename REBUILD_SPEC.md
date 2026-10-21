@@ -1,30 +1,33 @@
-# Open Learning Hub — clean rebuild
+# Open Learning Hub 2.0 — reference-driven clean rebuild
 
-This branch is the clean-rebuild workspace. The existing main branch remains untouched until replacement passes review.
+## Decision
+Discard the prior dark/indigo hero design and generic 18-course demo as the product baseline. Preserve main as rollback; rebuild on this branch. Never claim the rebuild is deployed until the actual published page is verified.
 
-## Product direction
-Original educational platform inspired by All CS Notes' information architecture, with original branding, artwork, and lesson content.
+## Reference observations from user screenshots (2026-10-21)
+- All CS Notes: slim white navigation; compact illustration-led hero; mint/emerald action accents; light gray catalogue surface; two-column course cards on narrow screenshot with large themed illustration occupying most of each card; meaningful course metadata.
+- Lesson/article: substantial connected prose, checkpoints, original visual diagrams, explicit progression, runnable-looking code examples.
+- Old OLH: giant dark hero with low-contrast heading; visual ornament instead of useful illustration; sparse lessons; generic course maps.
 
-## Required surfaces
-- Landing page with search, categories, featured paths and course catalogue
-- Course catalogue with level and topic filters
-- Course detail with outcomes, module accordion and lesson inventory
-- Lesson reader with notes, examples, exercises, checkpoints and progress
-- Curated multi-course paths
-- Mobile-first accessible navigation
+## Product requirements
+1. 36-course catalogue with verifiable syllabus inventory; original lesson text and assets only.
+2. Reusable course page, module accordion, visual lesson reader, examples, checks, projects and progress.
+3. Illustrations must explain actual concepts, not serve only as decoration.
+4. Mobile-first responsive layout, no horizontal overflow, readable type and accessible contrast.
+5. Track actual written/verified lessons separately from planned lessons; no false completeness claims.
+6. Original identity, branding and diagrams; do not copy reference copyrighted content or graphics.
 
-## Course schema
-Course: id, slug, title, summary, category, level, outcomes, prerequisites, modules.
-Module: id, title, order, lessons.
-Lesson: id, title, duration, objectives, sections, examples, exercises, quiz.
+## Visual acceptance tests
+- Hero readable on mobile and desktop with no dark-on-dark headline.
+- Mobile screenshot at 360px: compact hero, clear CTA, usable search and card grid.
+- Catalogue cards prioritize artwork and clear information hierarchy.
+- Lesson screenshot includes heading, teaching text, concept diagram, checkpoint and worked code.
+- Test 360px, 768px and 1280px with screenshots; compare composition and hierarchy to reference.
 
-## Release gates
-1. All navigation and deep links work on GitHub Pages.
-2. Responsive layouts at 360px, 768px and desktop.
-3. Course/lesson counts are derived from actual authored records, never fabricated.
-4. Progress survives reload and upgrades.
-5. No copied copyrighted course material or site branding.
-6. Automated smoke tests and manual visual comparisons pass.
+## Engineering gates
+- Static-hosting-safe deep links, filters, accessible controls, persisted progress.
+- Tests for route handling, content completeness, quiz grading and persistence.
+- Publish preview and verify HTTP and browser rendering before merging main.
+- Replace main only after verified content and feature completion.
 
-## Migration policy
-Replace legacy files only after a complete, verified build. Do not delete main or destroy history.
+## Status
+Reference audit updated. Current rebuild code remains an unverified scaffold and must be replaced. No release claimed.
