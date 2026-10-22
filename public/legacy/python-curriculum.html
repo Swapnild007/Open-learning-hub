@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f8fb">
+<title>Python Academy | Open Learning Hub</title>
+<meta name="description" content="An interactive Python course with worked examples, retrieval practice, applied challenges and spaced review.">
+<link rel="canonical" href="https://swapnild007.github.io/Open-learning-hub/python-curriculum.html">
+<style>
+:root{color-scheme:light;--ink:#202a3b;--muted:#667286;--line:#e1e6ef;--paper:#f7f8fb;--blue:#344db5;--bluebg:#edf0ff;--green:#18775f;--red:#a44432}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue)}button,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #a9b7ff;outline-offset:2px}
+header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav,main,footer{max-width:1020px;margin:auto;padding-left:20px;padding-right:20px}.nav{padding-top:11px;padding-bottom:11px;display:flex;justify-content:space-between;align-items:center;gap:14px}.brand{font-weight:850;text-decoration:none;color:var(--ink);font-size:13px}.nav a{font-size:12px}main{padding-top:20px;padding-bottom:48px}.hero{background:linear-gradient(115deg,#fff,#eef2ff);border:1px solid #dfe5fb;border-radius:17px;padding:clamp(22px,4vw,38px)}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-weight:850}h1{font-size:clamp(31px,4.7vw,48px);line-height:1.05;letter-spacing:-.055em;margin:9px 0}.hero p{max-width:720px;color:#59667c;font-size:13px;margin:0}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.chip{border:1px solid #dfe4f7;background:#fff;color:#46557a;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:750}.panel,.lesson-card,.review-card{margin:15px 0;background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px}.dash-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.dash-head h2{font-size:18px;margin:2px 0}.dash-head p{font-size:11px;color:var(--muted);margin:0}.btn{border:0;border-radius:8px;padding:9px 12px;background:var(--blue);color:#fff;font-size:11px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn:disabled{opacity:.42;cursor:not-allowed}.track{height:7px;background:#edf0f6;border-radius:99px;overflow:hidden;margin:12px 0 6px}.fill{height:100%;background:var(--green);width:0;transition:width .2s}.small{font-size:10px;color:var(--muted)}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:15px;align-items:start;margin-top:18px}.sidebar{position:sticky;top:70px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px;max-height:calc(100vh - 90px);overflow:auto}.sidebar h2{font-size:14px;margin:2px 0 8px}.lesson-list{display:grid;gap:5px}.lesson-pick{width:100%;display:flex;align-items:flex-start;gap:9px;text-align:left;border:1px solid transparent;border-radius:9px;background:transparent;padding:9px;color:var(--ink)}.lesson-pick:hover{background:#f7f8fc}.lesson-pick[aria-current=true]{background:var(--bluebg);border-color:#dce2ff}.lesson-pick .num{display:grid;place-items:center;min-width:25px;height:25px;border-radius:7px;background:#f0f2f7;font-size:10px;font-weight:850}.lesson-pick[aria-current=true] .num{background:var(--blue);color:white}.lesson-pick b{display:block;font-size:11px;line-height:1.35}.lesson-pick small{display:block;color:var(--muted);font-size:9px;margin-top:3px}.lesson-card{padding:0;overflow:hidden;margin:0}.lesson-head{padding:22px;background:linear-gradient(110deg,#eef2ff,#fff);border-bottom:1px solid #dfe5fb}.lesson-head h2{font-size:clamp(22px,3vw,31px);line-height:1.18;letter-spacing:-.04em;margin:6px 0}.lesson-head p{font-size:12px;color:#59667c;margin:0}.lesson-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.pill{border-radius:99px;padding:4px 8px;background:#fff;border:1px solid #dfe4f7;color:#59667c;font-size:9px;font-weight:800}.lesson-body{padding:clamp(16px,3vw,25px)}.lesson-body h3{font-size:16px;margin:22px 0 7px;letter-spacing:-.02em}.lesson-body h3:first-child{margin-top:0}.lesson-body p,.lesson-body li{font-size:12px;color:#4f5c71}.lesson-body li{margin:5px 0}.callout{padding:12px 14px;border-left:3px solid var(--blue);background:#f5f7fc;border-radius:7px;font-size:12px;color:#4f5c71}.code{padding:14px 16px;background:#1d2638;color:#f0f3fb;border-radius:9px;overflow:auto;font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}.code-caption{font-size:10px;color:var(--muted);margin:5px 0}.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini-card{padding:12px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe}.mini-card b{font-size:11px;display:block}.mini-card p{margin:4px 0 0}.quiz{padding:15px;background:#f7f9fd;border:1px solid var(--line);border-radius:11px;margin-top:20px}.quiz h3{margin:0 0 10px}.question{padding:12px 0;border-top:1px solid #e7ebf3}.question:first-of-type{border-top:0}.question p{font-size:12px;font-weight:800;color:var(--ink);margin:0 0 8px}.option{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:#4f5c71;padding:6px 0}.option input{margin-top:3px}.feedback{font-size:12px;font-weight:750;margin-top:10px}.practice{padding:14px;border:1px solid #dceee7;background:#f5fbf8;border-radius:10px;margin-top:18px}.practice h3{margin:0 0 6px}.practice p{margin:5px 0}.practice label{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:#3c675a;margin-top:10px}.memory{padding:14px;border:1px solid #eadff8;background:#fcf8ff;border-radius:10px;margin-top:14px}.memory button{margin-top:8px}.memory-answer{display:none;border-top:1px solid #eadff8;margin-top:10px;padding-top:10px;font-size:12px;color:#514365}.memory-answer.show{display:block}.lesson-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:18px}.statusline{font-size:11px;color:var(--muted);margin:9px 0 0}.due-list{display:flex;gap:8px;flex-wrap:wrap}.due-chip{background:#fff;border:1px solid var(--line);padding:6px 9px;border-radius:9px;font-size:10px}.footer-note{font-size:10px;color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:18px;color:#7b879b;font-size:10px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.sidebar{position:static;max-height:none}.lesson-list{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-pick{padding:7px}.lesson-pick b{font-size:10px}.dash-head{align-items:flex-start}.grid-two{grid-template-columns:1fr}.nav,main,footer{padding-left:13px;padding-right:13px}.lesson-head{padding:17px}.lesson-body{padding:15px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style></head>
+<body><header><nav class="nav"><a class="brand" href="./">← Open Learning Hub</a><a href="./wfm-curriculum.html">Explore WFM academy ↗</a></nav></header>
+<main>
+<section class="hero"><span class="eyebrow">Open Learning Hub · Python Academy</span><h1>Learn it. Recall it. Use it.</h1><p>A complete guided path from your first Python statement to tested, practical programs. Every lesson follows <strong>Understand → See → Do → Prove → Apply</strong>. Progress and review dates stay on this device.</p><div class="chips"><span class="chip">17 guided lessons</span><span class="chip">Active recall</span><span class="chip">Worked examples</span><span class="chip">Spaced review</span><span class="chip">Practical capstone</span></div></section>
+<section class="panel"><div class="dash-head"><div><span class="eyebrow">Your learning memory</span><h2 id="progressTitle">Your Python journey</h2><p id="progressText" aria-live="polite">Pass a lesson's knowledge check to record mastery.</p></div><button class="btn secondary" id="resetProgress" type="button">Reset progress</button></div><div class="track" role="progressbar" aria-label="Lessons passed" aria-valuemin="0" aria-valuemax="17" aria-valuenow="0" id="progressTrack"><div class="fill" id="progressFill"></div></div><span class="small" id="progressLabel">0 of 17 lessons passed</span><div style="margin-top:13px"><strong style="font-size:11px">Review queue</strong><p class="small" id="reviewSummary">Pass a lesson to schedule a future recall review.</p><div class="due-list" id="dueList"></div></div></section>
+<div class="layout"><aside class="sidebar" aria-label="Python lesson navigation"><h2>Course path</h2><p class="small">One lesson at a time. The next lesson appears only after you choose Next.</p><div class="lesson-list" id="lessonList"></div></aside><section class="lesson-card" id="lessonPanel" aria-live="polite"><div class="lesson-head"><span class="eyebrow" id="lessonKicker">Lesson 01 · Foundations</span><h2 id="lessonTitle">Python, the interpreter and your first program</h2><p id="lessonIntro"></p><div class="lesson-meta"><span class="pill" id="lessonTime">15 to 25 minutes</span><span class="pill">Understand · See · Do · Prove · Apply</span></div></div><div class="lesson-body" id="lessonBody"></div></section></div>
+<p class="footer-note">This academy runs without an account or external service. Progress uses localStorage in this browser and does not sync across devices. Code samples are presented for you to run in your own Python environment; this page does not pretend to execute Python.</p>
+</main><footer>Open Learning Hub · Python Academy · Build understanding, not just completion.</footer>
+<script>
+const lessons = [
+  {
+    "id": "setup",
+    "title": "Python and your first program",
+    "area": "Foundations",
+    "time": "20 min",
+    "intro": "Understand what Python is, what runs it, and how to verify your setup.",
+    "learn": "Python is a general-purpose programming language. You write instructions in a source file, then a Python interpreter executes them. An editor helps you write code; a terminal lets you issue commands. These are different jobs, even when an IDE bundles them together.",
+    "code": "print(\"Hello, Python!\")\nprint(2 + 3)",
+    "output": "Hello, Python!\n5",
+    "why": "Python executes statements from top to bottom. print() displays a value. The expression 2 + 3 is evaluated before print displays its result.",
+    "task": "Create hello.py with the example. Run python hello.py, or python3 hello.py if that is the command on your system. Then change the greeting and calculate 7 * 6.",
+    "apply": "Write down which command worked and explain, in your own words, the difference between Python, its interpreter and your editor.",
+    "recall": "Without looking above, what are the three separate jobs involved in writing and running a Python script?",
+    "memory": "Python is the language; the interpreter executes code; the editor helps you write it.",
+    "qs": [
+      [
+        "Which tool executes Python source code?",
+        [
+          "A code editor only",
+          "The Python interpreter",
+          "pip"
+        ],
+        1,
+        "The interpreter executes Python. Editors help author code; pip installs packages."
+      ],
+      [
+        "What does print(2 + 3) display?",
+        [
+          "2 + 3",
+          "5",
+          "print"
+        ],
+        1,
+        "Python evaluates the expression first, then displays 5."
+      ],
+      [
+        "Why might python --version fail?",
+        [
+          "Python may not be installed or on PATH, or the command may differ",
+          "Every .py file is broken",
+          "Python requires a browser"
+        ],
+        0,
+        "Check installation, command name and PATH before changing anything else."
+      ]
+    ]
+  },
+  {
+    "id": "values",
+    "title": "Variables, types and conversion",
+    "area": "Core syntax",
+    "time": "20 min",
+    "intro": "Store values, recognise common types and convert input deliberately.",
+    "learn": "A variable is a name bound to a value. Python is dynamically typed, so a name can later refer to a value of another type, but clear programs still use consistent meanings. Common built-in types include int, float, str and bool. input() returns text, even when the user types digits.",
+    "code": "name = \"Mira\"\nage = int(\"21\")\nheight = 1.68\nactive = True\nprint(name, age + 1)",
+    "output": "Mira 22",
+    "why": "The assignment operator = binds a name to a value. int(\"21\") converts text to an integer. Conversion can fail if the text is not a valid integer, so validate untrusted input.",
+    "task": "Ask for a user's age with input(), convert it to int, then print the age next year. Try a non-numeric input and observe the error.",
+    "apply": "Improve the program so invalid age input is handled without a confusing crash.",
+    "recall": "What type does input() return, and why should you not assume typed digits are already a number?",
+    "memory": "input() returns str. Convert explicitly with int() or float() when appropriate, and handle invalid input.",
+    "qs": [
+      [
+        "What is the type of input('Age: ')?",
+        [
+          "int",
+          "str",
+          "bool"
+        ],
+        1,
+        "input() returns a string, regardless of what the person types."
+      ],
+      [
+        "Which converts the text '42' to an integer?",
+        [
+          "str(42)",
+          "int('42')",
+          "bool('42')"
+        ],
+        1,
+        "int('42') produces the integer 42."
+      ],
+      [
+        "What happens with int('hello')?",
+        [
+          "It returns zero",
+          "It raises ValueError",
+          "It silently returns None"
+        ],
+        1,
+        "The text is not a valid integer representation, so conversion raises ValueError."
+      ]
+    ]
+  },
+  {
+    "id": "strings",
+    "title": "Strings, formatting and operators",
+    "area": "Core syntax",
+    "time": "20 min",
+    "intro": "Combine text safely and make expressions readable.",
+    "learn": "Strings represent text. Use quotes to create them, indexing and slicing to inspect them, and methods such as .strip(), .lower() and .replace() to transform them. f-strings are usually the clearest way to embed values in text. Arithmetic operators include +, -, *, /, //, %, and **; precedence matters, so use parentheses when they improve clarity.",
+    "code": "first = \"Ada\"\nscore = 7 * 6\nprint(f\"{first} scored {score}.\")\nprint(\"  PYTHON \".strip().lower())",
+    "output": "Ada scored 42.\npython",
+    "why": "f-strings evaluate expressions inside braces. String methods return transformed strings rather than changing the original string in place. The // operator performs floor division; % gives the remainder.",
+    "task": "Ask for a product name and price, then print a tidy receipt using an f-string. Try whitespace and uppercase input and normalise it.",
+    "apply": "Format a report line that contains a person's name, item count and total price to two decimal places.",
+    "recall": "How is / different from //, and why are f-strings useful?",
+    "memory": "/ performs true division; // performs floor division. f-strings embed values in readable text.",
+    "qs": [
+      [
+        "What does 7 // 2 evaluate to?",
+        [
+          "3",
+          "3.5",
+          "1"
+        ],
+        0,
+        "Floor division gives 3 for positive 7 divided by 2."
+      ],
+      [
+        "Which is an f-string?",
+        [
+          "'Total: {total}'",
+          "f'Total: {total}'",
+          "format f('Total')"
+        ],
+        1,
+        "The leading f tells Python to evaluate expressions inside braces."
+      ],
+      [
+        "What does '  Hi '.strip() return?",
+        [
+          "'  Hi '",
+          "'Hi'",
+          "'hi'"
+        ],
+        1,
+        "strip() removes leading and trailing whitespace. It does not lowercase text."
+      ]
+    ]
+  },
+  {
+    "id": "logic",
+    "title": "Conditions and Boolean logic",
+    "area": "Control flow",
+    "time": "20 min",
+    "intro": "Make a program choose a path using explicit conditions.",
+    "learn": "if runs a block when its condition is truthy. elif tests another condition if earlier branches did not match; else catches the remaining cases. Comparisons include ==, !=, <, <=, > and >=. Combine conditions with and, or and not. Use == to compare values and = to assign names.",
+    "code": "score = 82\nif score >= 90:\n    grade = \"A\"\nelif score >= 75:\n    grade = \"B\"\nelse:\n    grade = \"C\"\nprint(grade)",
+    "output": "B",
+    "why": "Python checks branches in order and runs only the first matching branch. Indentation defines the block. Ordering conditions from most specific to least specific avoids shadowing later branches.",
+    "task": "Build a simple ticket-price rule using age groups. Include boundary values such as 12, 13, 17 and 18 in your tests.",
+    "apply": "Explain what happens at every boundary and make sure no age falls through accidentally.",
+    "recall": "Why does the order of if and elif conditions matter?",
+    "memory": "Conditions are checked top to bottom; the first true branch runs. Indentation defines each block.",
+    "qs": [
+      [
+        "What does == mean?",
+        [
+          "Assign a value",
+          "Compare equality",
+          "Start a block"
+        ],
+        1,
+        "== compares values; = assigns a value to a name."
+      ],
+      [
+        "Which branch runs when earlier if/elif tests are false?",
+        [
+          "else",
+          "all branches",
+          "none, always"
+        ],
+        0,
+        "else handles the remaining cases if present."
+      ],
+      [
+        "Why test boundary values?",
+        [
+          "To make code longer",
+          "To catch gaps and overlapping conditions",
+          "Python requires exactly four tests"
+        ],
+        1,
+        "Boundary tests reveal off-by-one errors and unexpected branch choices."
+      ]
+    ]
+  },
+  {
+    "id": "loops",
+    "title": "Loops and iteration",
+    "area": "Control flow",
+    "time": "25 min",
+    "intro": "Repeat work without duplicating code and avoid common loop mistakes.",
+    "learn": "A for loop iterates over items in an iterable, such as a list or range. range(stop) generates integers from zero up to, but not including, stop. A while loop repeats while its condition is true, so update the state that makes the condition eventually false. break exits a loop; continue skips to the next iteration.",
+    "code": "total = 0\nfor number in range(1, 5):\n    total += number\nprint(total)\n\nfor name in [\"Asha\", \"Dev\"]:\n    print(name)",
+    "output": "10\nAsha\nDev",
+    "why": "range(1, 5) produces 1, 2, 3 and 4. total += number is shorthand for total = total + number. Iterating directly over a collection is often clearer than manually tracking an index.",
+    "task": "Calculate the sum of numbers from 1 through 100. Then print only the even numbers from a list.",
+    "apply": "Add a test for an empty list and explain what your loop returns in that case.",
+    "recall": "Why does range(1, 5) not include 5, and what must a while loop avoid?",
+    "memory": "The stop value in range is excluded. A while loop needs a path to make its condition false.",
+    "qs": [
+      [
+        "What values come from range(1, 4)?",
+        [
+          "1, 2, 3",
+          "1, 2, 3, 4",
+          "0, 1, 2, 3"
+        ],
+        0,
+        "The start is included and stop is excluded."
+      ],
+      [
+        "Which loop is usually clearest for every item in a list?",
+        [
+          "for item in items",
+          "while True with no exit",
+          "repeat syntax"
+        ],
+        0,
+        "Iterating directly over items is readable and avoids manual index mistakes."
+      ],
+      [
+        "What risk does a while loop have?",
+        [
+          "It cannot use conditions",
+          "It can run forever if its condition never becomes false",
+          "It only works with strings"
+        ],
+        1,
+        "Update the relevant state or use a clear exit condition."
+      ]
+    ]
+  },
+  {
+    "id": "collections",
+    "title": "Lists, tuples, sets and dictionaries",
+    "area": "Data structures",
+    "time": "25 min",
+    "intro": "Choose the right collection for ordered items, unique values and keyed records.",
+    "learn": "A list is ordered and mutable. A tuple is ordered and typically used for fixed groups. A set stores unique hashable values and is useful for membership checks and set operations. A dictionary maps keys to values. Choose based on what the data means, not merely on syntax. Avoid modifying a list while iterating over it unless the behaviour is deliberate.",
+    "code": "scores = [8, 10, 8]\nunique_scores = set(scores)\nprofile = {\"name\": \"Asha\", \"score\": 10}\nprofile[\"passed\"] = True\nprint(len(unique_scores))\nprint(profile[\"name\"])",
+    "output": "2\nAsha",
+    "why": "set(scores) removes duplicates. Dictionary keys are used to look up values; adding a new key assigns a value. Use .get(key) when a missing key should be handled without KeyError.",
+    "task": "Represent three contacts in a list of dictionaries. Find a contact by name and handle a missing contact clearly.",
+    "apply": "Explain why a dictionary is more suitable than parallel lists for a contact record.",
+    "recall": "When would you choose a set instead of a list, and a dictionary instead of a tuple?",
+    "memory": "Lists keep ordered mutable items; sets keep unique values; dictionaries map keys to values; tuples suit fixed ordered groups.",
+    "qs": [
+      [
+        "Which collection enforces uniqueness?",
+        [
+          "list",
+          "set",
+          "tuple"
+        ],
+        1,
+        "Sets contain unique hashable values."
+      ],
+      [
+        "How do you safely read a possibly missing dictionary key with a fallback?",
+        [
+          "d.get('key', fallback)",
+          "d['key'] always",
+          "d.add('key')"
+        ],
+        0,
+        "get returns the fallback when the key is absent."
+      ],
+      [
+        "What is a common list pitfall?",
+        [
+          "Lists cannot be changed",
+          "Removing items while iterating can skip items unexpectedly",
+          "Lists only store numbers"
+        ],
+        1,
+        "Build a new filtered list or iterate over a copy when appropriate."
+      ]
+    ]
+  },
+  {
+    "id": "functions",
+    "title": "Functions, parameters and return values",
+    "area": "Reusable code",
+    "time": "25 min",
+    "intro": "Turn repeated logic into named, testable units.",
+    "learn": "def creates a function. Parameters name the inputs; arguments are the values passed at a call. return sends a result back to the caller, while print only displays a value. Keep functions focused and predictable. Avoid mutable default arguments such as items=[] because that object is reused between calls; use None and create a fresh list inside instead.",
+    "code": "def price_with_tax(price, rate=0.08):\n    return price * (1 + rate)\n\ntotal = price_with_tax(100)\nprint(f\"{total:.2f}\")",
+    "output": "108.00",
+    "why": "The function has a required price parameter and an optional rate parameter. The return value can be stored, tested or passed to another function. Formatting with :.2f displays two digits after the decimal point.",
+    "task": "Write a function that accepts a list of numbers and returns the average. Decide what should happen for an empty list and test that case.",
+    "apply": "Separate calculation from display so the same function can be used in a command-line app or a test.",
+    "recall": "How does return differ from print, and why can mutable default arguments cause surprising behaviour?",
+    "memory": "return gives a result to the caller; print displays it. Use None for an optional mutable default and create a fresh object per call.",
+    "qs": [
+      [
+        "What does return do?",
+        [
+          "Only writes to the terminal",
+          "Sends a value back to the caller",
+          "Repeats the function"
+        ],
+        1,
+        "The caller can use the returned value in later expressions."
+      ],
+      [
+        "Why avoid def f(items=[])?",
+        [
+          "Lists are forbidden in functions",
+          "The same mutable list is reused across calls",
+          "Default arguments are always required"
+        ],
+        1,
+        "Use items=None, then create a new list inside the function."
+      ],
+      [
+        "What is a good function design?",
+        [
+          "One clear responsibility and explicit inputs/outputs",
+          "One huge function for the whole app",
+          "Hide all errors by returning zero"
+        ],
+        0,
+        "Focused functions are easier to explain, test and reuse."
+      ]
+    ]
+  },
+  {
+    "id": "errors",
+    "title": "Exceptions, debugging and tests",
+    "area": "Reliability",
+    "time": "25 min",
+    "intro": "Make failures understandable and verify behaviour instead of guessing.",
+    "learn": "Syntax errors prevent code from being parsed. Runtime exceptions occur while it runs; logic errors produce the wrong result. Catch only exceptions you can handle meaningfully. Keep try blocks narrow and do not silently swallow errors. Tests check expected behaviour for normal cases, edge cases and invalid input.",
+    "code": "def divide(a, b):\n    if b == 0:\n        raise ValueError(\"b must not be zero\")\n    return a / b\n\nassert divide(6, 2) == 3\ntry:\n    divide(1, 0)\nexcept ValueError as error:\n    print(error)",
+    "output": "b must not be zero",
+    "why": "raise signals that the function cannot complete under the supplied conditions. assert is useful for simple checks, while a test framework is better for a maintained test suite. Do not use assert to validate untrusted production input.",
+    "task": "Write tests for a function that converts Celsius to Fahrenheit. Include freezing point, a negative temperature and a bad input policy.",
+    "apply": "For each bug you fix, create a small test that would have caught it before the fix.",
+    "recall": "What is the difference between a syntax error, an exception and a logic error?",
+    "memory": "Syntax errors stop parsing; exceptions happen during execution; logic errors produce incorrect results. Test normal, boundary and invalid cases.",
+    "qs": [
+      [
+        "Which is best for handling an expected invalid user value?",
+        [
+          "Catch a specific exception and explain the correction",
+          "Use except: pass",
+          "Delete the input"
+        ],
+        0,
+        "Handle the specific failure you expect, and provide useful feedback."
+      ],
+      [
+        "What should a regression test do?",
+        [
+          "Prove the old bug stays fixed",
+          "Hide all errors",
+          "Replace documentation"
+        ],
+        0,
+        "A regression test fails if the old faulty behaviour returns."
+      ],
+      [
+        "Why are narrow try blocks useful?",
+        [
+          "They make every error harmless",
+          "They avoid accidentally catching unrelated failures",
+          "They remove the need for tests"
+        ],
+        1,
+        "A narrow block makes it clearer which operation may fail."
+      ]
+    ]
+  },
+  {
+    "id": "files",
+    "title": "Files, paths, CSV and JSON",
+    "area": "Data handling",
+    "time": "25 min",
+    "intro": "Persist information safely and exchange structured data.",
+    "learn": "Use with open(...) to ensure files close even when an error occurs. pathlib.Path makes path operations clearer across platforms. CSV represents rows and columns; JSON represents nested data using strings, numbers, booleans, null, arrays and objects. Be explicit about text encoding, and do not load untrusted serialized data with pickle.",
+    "code": "from pathlib import Path\nimport json\n\npath = Path(\"settings.json\")\nsettings = {\"theme\": \"light\", \"tips\": True}\npath.write_text(json.dumps(settings, indent=2), encoding=\"utf-8\")\nloaded = json.loads(path.read_text(encoding=\"utf-8\"))\nprint(loaded[\"theme\"])",
+    "output": "light",
+    "why": "json.dumps converts Python data into JSON text; json.loads parses JSON text. Path.read_text and write_text make text-file operations concise. Real programs should handle missing files and malformed data where those are possible.",
+    "task": "Create a tiny notes app that saves a list of notes to JSON and loads it on the next run. Handle the first run when the file does not exist.",
+    "apply": "Describe what happens if the JSON file is malformed and how you would preserve the original file before repairing it.",
+    "recall": "Why use a context manager or Path methods for files, and when would you use CSV versus JSON?",
+    "memory": "Use managed file access and explicit UTF-8. CSV suits tabular rows; JSON suits structured nested data.",
+    "qs": [
+      [
+        "Why use with open(...)?",
+        [
+          "It manages file closure",
+          "It encrypts files",
+          "It makes every path valid"
+        ],
+        0,
+        "A context manager closes the file reliably when the block exits."
+      ],
+      [
+        "Which format naturally represents nested objects and arrays?",
+        [
+          "JSON",
+          "CSV only",
+          "Plain integers only"
+        ],
+        0,
+        "JSON supports objects, arrays and primitive values."
+      ],
+      [
+        "What is a safe default encoding for general text files?",
+        [
+          "UTF-8 explicitly",
+          "Random encoding",
+          "No encoding ever"
+        ],
+        0,
+        "Explicit UTF-8 helps avoid platform-dependent text decoding surprises."
+      ]
+    ]
+  },
+  {
+    "id": "modules",
+    "title": "Modules, packages and environments",
+    "area": "Project setup",
+    "time": "20 min",
+    "intro": "Organise code and isolate dependencies so projects stay reproducible.",
+    "learn": "A module is a Python file that can be imported. A package groups modules. Virtual environments isolate project dependencies from other projects. pip installs packages, ideally after activating the project's environment. A requirements file or project metadata records dependencies. Never commit API keys, tokens or private credentials.",
+    "code": "# Create and activate an environment (command varies by shell)\npython -m venv .venv\n\n# After activation, install a package\npython -m pip install requests\n\n# In code\nimport json\nprint(json.dumps({\"ready\": True}))",
+    "output": "{\"ready\": true}",
+    "why": "Using python -m pip ties pip to the interpreter selected by python. The venv directory is usually excluded from version control; record dependency instructions instead. Standard-library modules such as json do not need separate installation.",
+    "task": "Create a virtual environment, install one well-known package inside it, and record the exact command you used. Then create a small module of your own and import it.",
+    "apply": "Explain how you would help another developer recreate the environment without sending them your .venv folder.",
+    "recall": "What problem does a virtual environment solve, and why use python -m pip?",
+    "memory": "Virtual environments isolate dependencies. python -m pip uses pip associated with the selected interpreter.",
+    "qs": [
+      [
+        "Why create a virtual environment?",
+        [
+          "To isolate project dependencies",
+          "To make Python code private",
+          "To replace source files"
+        ],
+        0,
+        "Separate environments reduce dependency conflicts between projects."
+      ],
+      [
+        "Why avoid committing secrets?",
+        [
+          "Repository history can expose them",
+          "Python cannot read them",
+          "Secrets make code slower"
+        ],
+        0,
+        "Use environment variables or a secret manager and rotate exposed credentials."
+      ],
+      [
+        "What belongs in dependency documentation?",
+        [
+          "Package names and appropriate versions",
+          "Your passwords",
+          "The entire operating system"
+        ],
+        0,
+        "Document enough to reproduce the environment without including secrets."
+      ]
+    ]
+  },
+  {
+    "id": "comprehensions",
+    "title": "Comprehensions, sorting and useful iteration tools",
+    "area": "Data fluency",
+    "time": "20 min",
+    "intro": "Transform collections clearly and choose readable tools over clever code.",
+    "learn": "List and dictionary comprehensions create collections from iterables. enumerate provides an index with each item; zip iterates over sequences together. sorted returns a new sorted list, while list.sort mutates a list in place. Prefer a normal loop when a comprehension becomes hard to read.",
+    "code": "prices = [12, 5, 18, 9]\nexpensive = [price for price in prices if price >= 10]\nlabels = {i: f\"Item {i}\" for i in range(1, 4)}\nprint(expensive)\nfor index, price in enumerate(prices, start=1):\n    print(index, price)",
+    "output": "[12, 18]\n1 12\n2 5\n3 18\n4 9",
+    "why": "A comprehension makes a transformation concise. enumerate avoids manually incrementing a counter. sorted(prices) leaves prices unchanged; prices.sort() changes the original list.",
+    "task": "Given a list of names, produce a cleaned list with whitespace removed and empty names excluded. Then sort it case-insensitively.",
+    "apply": "Review your solution for readability. If it takes effort to explain, rewrite it as a simple loop.",
+    "recall": "How do sorted() and list.sort() differ, and when is a regular loop preferable to a comprehension?",
+    "memory": "sorted() returns a new sorted list; .sort() mutates the list. Use comprehensions for simple, readable transformations.",
+    "qs": [
+      [
+        "What does enumerate(items) provide?",
+        [
+          "An index and an item",
+          "Only the final item",
+          "A sorted copy"
+        ],
+        0,
+        "It yields index-item pairs."
+      ],
+      [
+        "Which preserves the original list?",
+        [
+          "items.sort()",
+          "sorted(items)",
+          "items.reverse()"
+        ],
+        1,
+        "sorted creates a new list; sort and reverse mutate the list."
+      ],
+      [
+        "When should you avoid a comprehension?",
+        [
+          "When it becomes difficult to read",
+          "When filtering any items",
+          "When creating a list"
+        ],
+        0,
+        "Readability matters more than squeezing a complex transformation onto one line."
+      ]
+    ]
+  },
+  {
+    "id": "oop",
+    "title": "Classes, objects and dataclasses",
+    "area": "Program design",
+    "time": "25 min",
+    "intro": "Group related state and behaviour when a simple function or dictionary is not enough.",
+    "learn": "A class defines a kind of object; an instance is one object created from it. __init__ initialises instance state. Methods receive the instance as self by convention. Composition means an object contains or uses other objects; inheritance represents a genuine 'is-a' relationship. Dataclasses can reduce boilerplate for data-focused classes.",
+    "code": "from dataclasses import dataclass\n\n@dataclass\nclass Task:\n    title: str\n    done: bool = False\n\n    def complete(self):\n        self.done = True\n\ntask = Task(\"Review Python\")\ntask.complete()\nprint(task.done)",
+    "output": "True",
+    "why": "The dataclass decorator generates common methods such as an initializer and readable representation. The method changes the particular instance. Use classes when the model makes code clearer, not just because object-oriented syntax exists.",
+    "task": "Model a bank account or task item. Define its state and two behaviours, then test valid and invalid operations.",
+    "apply": "Explain why a class is useful for your example and identify one simpler alternative if the model is too small.",
+    "recall": "What is the difference between a class and an instance, and when is composition preferable to inheritance?",
+    "memory": "A class defines structure and behaviour; an instance is a concrete object. Prefer composition unless inheritance models a real subtype.",
+    "qs": [
+      [
+        "What is an instance?",
+        [
+          "A concrete object created from a class",
+          "A Python package",
+          "A syntax error"
+        ],
+        0,
+        "An instance has its own state as defined by the class."
+      ],
+      [
+        "What is self used for in an instance method?",
+        [
+          "To refer to the current instance",
+          "To install packages",
+          "To make a global variable"
+        ],
+        0,
+        "self is the conventional first parameter for instance methods."
+      ],
+      [
+        "When is composition a good choice?",
+        [
+          "When an object uses another object as a component",
+          "Whenever code has more than one line",
+          "Only in web apps"
+        ],
+        0,
+        "Composition models a has-a relationship without forcing an inheritance hierarchy."
+      ]
+    ]
+  },
+  {
+    "id": "apis",
+    "title": "HTTP, APIs, databases and secrets",
+    "area": "Integration",
+    "time": "25 min",
+    "intro": "Connect programs to external data without assuming every request succeeds.",
+    "learn": "An API defines a way for programs to communicate. HTTP responses include status codes; a successful network connection does not guarantee a successful application response. Set timeouts, check status codes, validate returned data and handle network errors. Use SQLite for local relational storage. Keep credentials out of source code and browser-delivered files.",
+    "code": "import requests\n\nresponse = requests.get(\n    \"https://example.com\", timeout=10\n)\nresponse.raise_for_status()\nprint(response.status_code)",
+    "output": "A successful HTTP status code, if the request succeeds.",
+    "why": "This example needs the requests package and an internet connection, and the actual response depends on the remote server. A timeout prevents an unbounded wait; raise_for_status turns HTTP error responses into exceptions. Production code should handle those exceptions and respect the service's terms.",
+    "task": "Using a public test API, request one record with a timeout, check the response status, parse JSON and print one field. Include a failure path.",
+    "apply": "List what you would log and what you would never log if the API request required a secret token.",
+    "recall": "Why do timeouts, status checks and secret handling belong in an API client?",
+    "memory": "Set timeouts, check HTTP status, validate response data, handle errors and keep secrets out of source control and client-side code.",
+    "qs": [
+      [
+        "Why set a request timeout?",
+        [
+          "To bound how long the call can wait",
+          "To guarantee the server is correct",
+          "To skip status codes"
+        ],
+        0,
+        "Network calls can stall; timeouts provide a bound."
+      ],
+      [
+        "What does raise_for_status() help with?",
+        [
+          "Raising an exception for HTTP error status codes",
+          "Encrypting a response",
+          "Retrying forever"
+        ],
+        0,
+        "It makes HTTP error responses explicit; you still need appropriate exception handling."
+      ],
+      [
+        "Where should an API secret be stored?",
+        [
+          "In source code comments",
+          "In a suitable secret store or environment configuration",
+          "In a public HTML file"
+        ],
+        1,
+        "Browser-delivered code and public repositories are not secret storage."
+      ]
+    ]
+  },
+  {
+    "id": "automation",
+    "title": "Automation and command-line tools",
+    "area": "Applied Python",
+    "time": "25 min",
+    "intro": "Build small tools that are predictable, safe to rerun and easy to troubleshoot.",
+    "learn": "Automation scripts should validate inputs, use clear paths, report what they changed and fail safely. argparse helps build command-line interfaces. pathlib simplifies file operations. Before moving or deleting files, preview the planned changes and keep a recovery path. Idempotent operations can be repeated without causing unintended extra effects.",
+    "code": "from pathlib import Path\nimport argparse\n\nparser = argparse.ArgumentParser()\nparser.add_argument(\"folder\", type=Path)\nargs = parser.parse_args()\n\nif not args.folder.is_dir():\n    parser.error(\"folder must be a directory\")\nprint(f\"Found {len(list(args.folder.iterdir()))} entries\")",
+    "output": "Prints a count for the folder supplied on the command line.",
+    "why": "argparse supplies a help screen and validates argument shape. This example only counts directory entries, so it is safe to test. File-moving automation should first run in preview mode and should not overwrite existing files silently.",
+    "task": "Build a file inventory tool that lists filenames and sizes. Add a preview-only mode before you attempt any file changes.",
+    "apply": "Write down how your script behaves when the folder is missing, permission is denied or a filename already exists at the destination.",
+    "recall": "What makes an automation safe to rerun, and why should destructive actions have a preview?",
+    "memory": "Validate inputs, make actions visible, prefer idempotent behaviour and preview destructive changes before executing them.",
+    "qs": [
+      [
+        "What is a useful first version of a file organiser?",
+        [
+          "A dry-run preview of planned moves",
+          "Immediately delete unknown files",
+          "Ignore collisions"
+        ],
+        0,
+        "Preview output helps catch mistakes before any files change."
+      ],
+      [
+        "What does argparse provide?",
+        [
+          "Command-line argument parsing and help",
+          "A database server",
+          "A Python interpreter"
+        ],
+        0,
+        "argparse defines command-line arguments and reports invalid usage."
+      ],
+      [
+        "What does idempotent mean in automation?",
+        [
+          "Repeating an operation has no unintended additional effect",
+          "The script never stops",
+          "The script ignores every error"
+        ],
+        0,
+        "Idempotency is especially valuable for retryable workflows."
+      ]
+    ]
+  },
+  {
+    "id": "data",
+    "title": "Data analysis with CSV and pandas",
+    "area": "Data work",
+    "time": "25 min",
+    "intro": "Load data, inspect quality, calculate carefully and communicate limitations.",
+    "learn": "Before analysis, inspect column names, data types, missing values, duplicates and the meaning of each row. pandas provides DataFrame operations for tabular data. Check denominators before calculating rates and distinguish an observed association from a causal explanation. Visualisations should make units, periods and populations clear.",
+    "code": "import pandas as pd\n\ndf = pd.read_csv(\"sales.csv\")\nprint(df.head())\nprint(df.isna().sum())\nsummary = df.groupby(\"region\", dropna=False)[\"sales\"].sum()\nprint(summary)",
+    "output": "A preview, missing-value counts, and sales totals grouped by region, assuming the file has those columns.",
+    "why": "This example requires pandas and a CSV with region and sales columns. Column names and data types must be checked before relying on the result. groupby aggregates records by category; missing categories need an intentional policy.",
+    "task": "Use a small CSV you understand. Document what one row represents, inspect missing values, calculate one grouped metric and reconcile it against a total.",
+    "apply": "Write a short finding with the period, population, metric definition, limitation and a recommendation supported by the data.",
+    "recall": "What should you check before trusting a group-by result, and why must a metric's denominator be explicit?",
+    "memory": "Inspect schema and data quality first. Define population, period and denominator, and separate observations from causal claims.",
+    "qs": [
+      [
+        "What should you do before interpreting a DataFrame?",
+        [
+          "Inspect schema, types, missing values and row meaning",
+          "Assume all rows are valid",
+          "Delete all outliers"
+        ],
+        0,
+        "Data quality and row meaning determine whether a calculation is valid."
+      ],
+      [
+        "Why state a rate's denominator?",
+        [
+          "So the result can be interpreted and compared correctly",
+          "To make a chart colourful",
+          "It is optional for all metrics"
+        ],
+        0,
+        "A rate without a denominator definition can mislead."
+      ],
+      [
+        "Does correlation prove causation?",
+        [
+          "Yes, always",
+          "No, other explanations may exist",
+          "Only when plotted"
+        ],
+        1,
+        "Causal claims need stronger evidence and a suitable design."
+      ]
+    ]
+  },
+  {
+    "id": "advanced",
+    "title": "Iterators, generators, decorators and async basics",
+    "area": "Advanced tools",
+    "time": "25 min",
+    "intro": "Recognise Python tools for lazy processing and asynchronous I/O.",
+    "learn": "An iterable can provide an iterator; next() retrieves successive items until StopIteration. Generators yield values lazily, often reducing memory use for large sequences. Decorators wrap or modify callable behaviour. async and await support cooperative asynchronous work, particularly I/O-bound tasks. They do not automatically make CPU-heavy work faster.",
+    "code": "def countdown(start):\n    while start > 0:\n        yield start\n        start -= 1\n\nfor value in countdown(3):\n    print(value)",
+    "output": "3\n2\n1",
+    "why": "yield pauses the generator and returns a value; execution resumes when the next value is requested. Lazy iteration is useful for streams or large sequences. Use advanced features when they simplify the problem, not to make ordinary code look clever.",
+    "task": "Create a generator that yields lines from a large file one at a time, or a sequence of filtered values. Compare the idea with building a full list.",
+    "apply": "For a slow task, decide whether the bottleneck is network I/O, CPU work or file I/O before choosing threads, processes or asyncio.",
+    "recall": "What does yield do, and why doesn't async automatically speed up CPU-bound calculations?",
+    "memory": "Generators yield values lazily. Async supports cooperative I/O concurrency; choose concurrency based on the workload.",
+    "qs": [
+      [
+        "What does yield do?",
+        [
+          "Produces a value and suspends generator execution",
+          "Ends all Python processes",
+          "Installs a package"
+        ],
+        0,
+        "A generator resumes where it paused when another value is requested."
+      ],
+      [
+        "When is async often useful?",
+        [
+          "Many I/O-bound operations",
+          "Every arithmetic loop",
+          "Only when there is no waiting"
+        ],
+        0,
+        "Async can coordinate waiting efficiently, but requires async-compatible operations."
+      ],
+      [
+        "What should guide a concurrency choice?",
+        [
+          "The workload and measured bottleneck",
+          "The longest-looking API name",
+          "A guess alone"
+        ],
+        0,
+        "Profile first, then choose an approach suited to I/O or CPU work."
+      ]
+    ]
+  },
+  {
+    "id": "capstone",
+    "title": "Capstone: build, test and explain a useful tool",
+    "area": "Final project",
+    "time": "45 to 90 min",
+    "intro": "Bring together functions, files, validation, tests and documentation in a small real application.",
+    "learn": "A complete small project has a clear purpose, a narrow scope, a sensible data model, separated functions, validation, useful errors, tests and instructions. Build a working minimum first, then improve it. Do not claim a feature works until you have run it and tested normal, boundary and failure cases.",
+    "code": "def add_expense(expenses, description, amount):\n    if not description.strip():\n        raise ValueError(\"description is required\")\n    if amount <= 0:\n        raise ValueError(\"amount must be positive\")\n    expenses.append({\"description\": description, \"amount\": amount})\n\ndef total_expenses(expenses):\n    return sum(item[\"amount\"] for item in expenses)",
+    "output": "A small, testable core for an expense tracker.",
+    "why": "The functions have clear responsibilities and validate important inputs. A complete app would add persistence, a command-line interface, tests, and careful handling of malformed saved data.",
+    "task": "Build a command-line expense tracker that adds expenses, saves to JSON or CSV, lists records and calculates a total. Write tests for valid entries, invalid amounts, empty descriptions and missing storage.",
+    "apply": "Write a README with setup, usage, example output, test instructions and limitations. Run it from a fresh environment and verify every documented command.",
+    "recall": "What evidence would convince another developer that your project is usable and trustworthy?",
+    "memory": "A reliable project includes a clear scope, validation, useful errors, tests, documentation and evidence from actually running it.",
+    "qs": [
+      [
+        "Which is strongest evidence a feature works?",
+        [
+          "A polished card saying Complete",
+          "A reproducible test or run with observed expected output",
+          "A long roadmap"
+        ],
+        1,
+        "A feature should be verified with observable behaviour, not a label."
+      ],
+      [
+        "What should the README include?",
+        [
+          "Setup, usage, tests and limitations",
+          "Private credentials",
+          "Claims about untested features"
+        ],
+        0,
+        "Good documentation helps another person reproduce and evaluate the project."
+      ],
+      [
+        "What should tests cover?",
+        [
+          "Only the easiest success case",
+          "Normal, boundary and failure cases",
+          "Nothing until release"
+        ],
+        1,
+        "Edge cases and failure paths are where many practical bugs appear."
+      ]
+    ]
+  }
+];
+const STORAGE="olh-python-memory-v2";
+let state={passed:{},attempts:{},reviewDue:{},ratings:{},active:0};
+try{const saved=JSON.parse(localStorage.getItem(STORAGE)||"null");if(saved&&typeof saved==="object")state={...state,...saved}}catch(e){}
+const $=id=>document.getElementById(id);
+function persist(){try{localStorage.setItem(STORAGE,JSON.stringify(state))}catch(e){$("progressText").textContent="Browser storage is unavailable. Progress may not persist after you leave this page."}}
+function dayKey(ms){return new Date(ms).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"})}
+function dueIndices(){const now=Date.now();return lessons.map((l,i)=>i).filter(i=>state.passed[lessons[i].id]&&(!state.reviewDue[lessons[i].id]||state.reviewDue[lessons[i].id]<=now))}
+function updateDashboard(){const count=lessons.filter(l=>state.passed[l.id]).length;$("progressFill").style.width=(count/lessons.length*100)+"%";$("progressTrack").setAttribute("aria-valuenow",count);$("progressLabel").textContent=count+" of "+lessons.length+" lessons passed";$("progressTitle").textContent=count===lessons.length?"All lessons passed. Keep the knowledge alive.":"Your Python journey";$("progressText").textContent=count===lessons.length?"Course path passed. Use the review queue to strengthen long-term recall.":count+" lesson"+(count===1?"":"s")+" passed. Read, practise, then retrieve the idea without looking.";const due=dueIndices();$("reviewSummary").textContent=due.length?due.length+" review"+(due.length===1?" is":"s are")+" due now. Try to answer before revealing the explanation.":"No reviews due right now. New passed lessons will enter the spaced-review schedule.";const list=$("dueList");list.replaceChildren();due.slice(0,6).forEach(i=>{const b=document.createElement("button");b.type="button";b.className="due-chip";b.textContent="Review "+String(i+1).padStart(2,"0")+" · "+lessons[i].title;b.addEventListener("click",()=>{state.active=i;renderLesson();$("lessonPanel").scrollIntoView({behavior:"smooth",block:"start"})});list.append(b)});if(!due.length){const s=document.createElement("span");s.className="small";s.textContent="Review dates are stored locally.";list.append(s)}}
+function buildNav(){const list=$("lessonList");list.replaceChildren();lessons.forEach((l,i)=>{const b=document.createElement("button");b.type="button";b.className="lesson-pick";b.setAttribute("aria-current",String(i===state.active));b.disabled=i>0&&!state.passed[lessons[i-1].id];const num=document.createElement("span");num.className="num";num.textContent=state.passed[l.id]?"✓":String(i+1).padStart(2,"0");const label=document.createElement("span");const title=document.createElement("b");title.textContent=l.title;const small=document.createElement("small");small.textContent=l.area+(state.passed[l.id]?" · Passed":b.disabled?" · Locked":"");label.append(title,small);b.append(num,label);b.addEventListener("click",()=>{state.active=i;renderLesson();$("lessonPanel").scrollIntoView({behavior:"smooth",block:"start"})});list.append(b)})}
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
+function renderLesson(){const l=lessons[state.active];$("lessonKicker").textContent="Lesson "+String(state.active+1).padStart(2,"0")+" of "+lessons.length+" · "+l.area;$("lessonTitle").textContent=l.title;$("lessonIntro").textContent=l.intro;$("lessonTime").textContent=l.time;const body=$("lessonBody");body.replaceChildren();
+body.append(el("h3","","1 · Understand"));body.append(el("p","",l.learn));const call=el("div","callout");call.append(el("strong","","Core idea: "),document.createTextNode(l.memory));body.append(call);
+body.append(el("h3","","2 · See it work"));body.append(el("p","","Read the example before running it. Predict the output, then compare your prediction with the expected result."));body.append(el("pre","code",l.code));const out=el("div","mini-card");out.append(el("b","","Expected output / behaviour"),el("p","",l.output));body.append(out);body.append(el("p","code-caption","Examples are shown, not executed by this page. Run them in your Python environment and inspect any differences."));
+body.append(el("h3","","Why it works"));body.append(el("p","",l.why));body.append(el("h3","","3 · Do it yourself"));const practice=el("div","practice");practice.append(el("h3","","Practice challenge"),el("p","",l.task),el("p","",l.apply));const check=el("label");const cb=el("input");cb.type="checkbox";cb.checked=!!state.attempts[l.id];cb.addEventListener("change",()=>{state.attempts[l.id]=cb.checked;persist()});check.append(cb,document.createTextNode(" I attempted the practice and checked the result in my own Python environment."));practice.append(check);body.append(practice);
+const memory=el("div","memory");memory.append(el("strong","","4 · Recall from memory"),el("p","",l.recall));const reveal=el("button","btn secondary","Reveal answer");reveal.type="button";const answer=el("div","memory-answer",l.memory);reveal.addEventListener("click",()=>{const open=answer.classList.toggle("show");reveal.textContent=open?"Hide answer":"Reveal answer"});memory.append(reveal,answer);body.append(memory);
+const quiz=el("div","quiz");quiz.append(el("h3","","5 · Prove your understanding"));quiz.append(el("p","small","Answer all three questions without checking the lesson. Pass at 2 out of 3 or better. If you miss one, read the explanation and try again."));const selected=[];l.qs.forEach((q,qi)=>{const qbox=el("div","question");qbox.append(el("p","",String(qi+1)+". "+q[0]));q[1].forEach((option,oi)=>{const lab=el("label","option");const radio=el("input");radio.type="radio";radio.name="q"+state.active+"_"+qi;radio.value=oi;radio.addEventListener("change",()=>selected[qi]=oi);lab.append(radio,document.createTextNode(option));qbox.append(lab)});quiz.append(qbox)});const checkBtn=el("button","btn","Check answers");checkBtn.type="button";const feedback=el("div","feedback");feedback.setAttribute("aria-live","polite");checkBtn.addEventListener("click",()=>{if(selected.filter(v=>v!==undefined).length!==l.qs.length){feedback.style.color="#9b5c12";feedback.textContent="Answer all three questions first.";return}let score=0;const explanations=[];l.qs.forEach((q,i)=>{const correct=selected[i]===q[2];if(correct)score++;explanations.push((i+1)+". "+(correct?"Correct. ":"Review. ")+q[3])});feedback.style.color=score>=2?"#18775f":"#a44432";feedback.textContent="Score: "+score+"/3. "+(score>=2?"Knowledge check passed.":"Not passed yet. Review the explanations and try again.")+" "+explanations.join(" ");if(score>=2){const id=l.id;state.passed[id]=true;state.reviewDue[id]=Date.now()+24*60*60*1000;state.ratings[id]=0;persist();updateDashboard();buildNav();finishBtn.disabled=false;finishBtn.textContent=state.active===lessons.length-1?"Course passed ✓":"Lesson passed ✓";status.textContent="Passed. First review scheduled for tomorrow. Continue only when ready."}});quiz.append(checkBtn,feedback);body.append(quiz);
+const actions=el("div","lesson-actions");const prev=el("button","btn secondary","← Previous lesson");prev.type="button";prev.disabled=state.active===0;prev.addEventListener("click",()=>{state.active--;renderLesson();$("lessonPanel").scrollIntoView({behavior:"smooth",block:"start"})});const finishBtn=el("button","btn",state.passed[l.id]?"Lesson passed ✓":"Pass the knowledge check to unlock next");finishBtn.type="button";finishBtn.disabled=!state.passed[l.id];finishBtn.addEventListener("click",()=>{if(!state.passed[l.id])return;if(state.active<lessons.length-1){state.active++;renderLesson();$("lessonPanel").scrollIntoView({behavior:"smooth",block:"start"})}else{status.textContent="You have passed all 16 lessons. Complete the review queue and build the capstone in your own environment."}});const status=el("span","statusline",state.passed[l.id]?"Passed on this device. Review is scheduled for "+dayKey(state.reviewDue[l.id])+".":"Pass the knowledge check to unlock the next lesson.");actions.append(prev,finishBtn);body.append(actions,status);
+if(state.passed[l.id]){const review=el("div","review-card");review.append(el("h3","","Spaced review"));review.append(el("p","", "Try the recall question above without reading the lesson. Then rate how easy it felt. Reviews schedule the next recall based on your rating."));const ratings=el("div","lesson-actions");[["Again",0],["Hard",1],["Good",2],["Easy",3]].forEach(([label,val])=>{const b=el("button","btn secondary",label);b.type="button";b.addEventListener("click",()=>{const intervals=[1,2,7,14];state.ratings[l.id]=val;state.reviewDue[l.id]=Date.now()+intervals[val]*24*60*60*1000;persist();updateDashboard();renderLesson()});ratings.append(b)});review.append(ratings,el("p","small","Again: 1 day · Hard: 2 days · Good: 7 days · Easy: 14 days. These are simple reminders, not a guarantee of permanent memory."));body.append(review)}
+buildNav();updateDashboard()}
+$("resetProgress").addEventListener("click",()=>{if(confirm("Delete saved Python lesson progress and review dates from this browser?")){state={passed:{},attempts:{},reviewDue:{},ratings:{},active:0};persist();renderLesson()}});
+if(state.active<0||state.active>=lessons.length)state.active=0;
+while(state.active>0&&!state.passed[lessons[state.active-1].id])state.active=0;
+renderLesson();
+</script></body></html>

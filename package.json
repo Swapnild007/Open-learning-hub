@@ -1,0 +1,38 @@
+{
+  "name": "open-learning-hub",
+  "version": "2.0.0-draft",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/preserve-legacy.mjs && tsc --noEmit && vite build && node scripts/build-sw.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run test && npm run build",
+    "format": "prettier --write src scripts tests *.ts *.json *.html docs/*.md .github/workflows/*.yml"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sql.js": "1.13.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.56.1",
+    "@tailwindcss/vite": "4.1.16",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@types/sql.js": "1.4.9",
+    "@vitejs/plugin-react": "5.0.4",
+    "prettier": "^3.6.2",
+    "tailwindcss": "4.1.16",
+    "typescript": "5.9.3",
+    "vite": "^7.3.7",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

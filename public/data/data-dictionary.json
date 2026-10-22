@@ -1,0 +1,27 @@
+{
+  "name": "Original synthetic contact intervals",
+  "seed": 20261022,
+  "rows": 1344,
+  "grain": "One team per 30-minute interval; 16 intervals daily, 28 days, 3 teams",
+  "timezone": "Illustrative local time; no real organization implied",
+  "synthetic": true,
+  "totals": {
+    "offered": 65971,
+    "handled": 62624,
+    "abandons": 3347,
+    "answered_within_30s": 56521,
+    "handling_seconds": 22364323,
+    "answered_wait_seconds": 1723167
+  },
+  "definitions": {
+    "offered": "Handled + abandons; no short-abandon exclusion",
+    "answered_within_30s": "Subset of handled; divide by offered for this synthetic service-level contract",
+    "handling_seconds": "Total handling seconds; divide by handled for AHT",
+    "answered_wait_seconds": "Total waiting seconds for handled contacts; divide by handled for ASA"
+  },
+  "limitations": [
+    "No real personal data",
+    "Independent synthetic intervals, not cumulative snapshots",
+    "Not a validated staffing or arrival-distribution model"
+  ]
+}
