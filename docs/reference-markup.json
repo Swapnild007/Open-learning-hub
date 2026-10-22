@@ -1,0 +1,133 @@
+{
+  "method": "Public server HTML only; no interaction claims",
+  "items": [
+    {
+      "tag": "button",
+      "text": "Courses & Plans"
+    },
+    {
+      "tag": "button",
+      "text": "Playground"
+    },
+    {
+      "tag": "button",
+      "text": ""
+    },
+    {
+      "tag": "h1",
+      "text": "Playwright Testing"
+    },
+    {
+      "tag": "h2",
+      "text": "See how the notes work before you buy"
+    },
+    {
+      "tag": "button",
+      "text": ""
+    },
+    {
+      "tag": "h3",
+      "text": "What you get after enrolling"
+    },
+    {
+      "tag": "h2",
+      "text": "Build skills that open doors to real roles"
+    },
+    {
+      "tag": "h3",
+      "text": "QA Automation Engineer"
+    },
+    {
+      "tag": "h3",
+      "text": "Software Development Engineer in Test"
+    },
+    {
+      "tag": "h3",
+      "text": "Test Automation Engineer"
+    },
+    {
+      "tag": "h2",
+      "text": "About this Playwright testing course"
+    },
+    {
+      "tag": "h3",
+      "text": "Skills you will learn"
+    },
+    {
+      "tag": "h3",
+      "text": "Who this course is for"
+    },
+    {
+      "tag": "h3",
+      "text": "Get everything with all access"
+    },
+    {
+      "tag": "h2",
+      "text": "What is inside the course"
+    },
+    {
+      "tag": "h2",
+      "text": "Learn a whole skill, not one topic"
+    },
+    {
+      "tag": "h3",
+      "text": "Playwright Test Automation Combo"
+    },
+    {
+      "tag": "h3",
+      "text": "Frontend Specialist Combo"
+    },
+    {
+      "tag": "h3",
+      "text": "Full Stack Developer Path"
+    },
+    {
+      "tag": "h2",
+      "text": "Showcase your skills with a course certificate"
+    },
+    {
+      "tag": "h3",
+      "text": "Verified proof of completion"
+    },
+    {
+      "tag": "h3",
+      "text": "Ready to share"
+    },
+    {
+      "tag": "h3",
+      "text": "Accessible whenever you need it"
+    },
+    {
+      "tag": "h2",
+      "text": "What learners say after finishing"
+    },
+    {
+      "tag": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "tag": "h2",
+      "text": "Learn"
+    },
+    {
+      "tag": "h2",
+      "text": "Tracks"
+    },
+    {
+      "tag": "h2",
+      "text": "Resources"
+    },
+    {
+      "tag": "h2",
+      "text": "Popular courses"
+    },
+    {
+      "tag": "h2",
+      "text": "Company"
+    },
+    {
+      "tag": "h2",
+      "text": "Support"
+    }
+  ]
+}

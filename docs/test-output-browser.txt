@@ -1,0 +1,54 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft test:e2e
+> playwright test
+
+[2m[WebServer] [22m(node:198) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22mnpm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[2m[WebServer] [22m(node:211) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:211) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 2 workers
+
+(node:230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [desktop] › tests/e2e/learner.spec.ts:8:1 › catalog discovery, search and course path work (819ms)
+  ✓   1 [android] › tests/e2e/learner.spec.ts:8:1 › catalog discovery, search and course path work (873ms)
+  ✓   3 [desktop] › tests/e2e/learner.spec.ts:34:1 › assessments, assignments, capstone, bookmarks and refresh persistence (2.0s)
+  ✓   4 [android] › tests/e2e/learner.spec.ts:34:1 › assessments, assignments, capstone, bookmarks and refresh persistence (2.0s)
+  ✓   5 [desktop] › tests/e2e/learner.spec.ts:95:1 › progress export/import restores state; invalid import preserves it (608ms)
+  ✓   6 [android] › tests/e2e/learner.spec.ts:95:1 › progress export/import restores state; invalid import preserves it (644ms)
+  ✓   7 [desktop] › tests/e2e/learner.spec.ts:138:1 › practice engine executes SQLite and validates safe fallbacks (952ms)
+  ✓   8 [android] › tests/e2e/learner.spec.ts:138:1 › practice engine executes SQLite and validates safe fallbacks (956ms)
+  ✓   9 [desktop] › tests/e2e/learner.spec.ts:176:1 › global search indexes explanations and handles empty results (423ms)
+  ✓  10 [android] › tests/e2e/learner.spec.ts:176:1 › global search indexes explanations and handles empty results (448ms)
+  ✓  11 [desktop] › tests/e2e/learner.spec.ts:188:1 › all course and lesson routes resolve without horizontal overflow or console errors (4.3s)
+  ✓  12 [android] › tests/e2e/learner.spec.ts:188:1 › all course and lesson routes resolve without horizontal overflow or console errors (4.3s)
+  ✓  14 [android] › tests/e2e/learner.spec.ts:210:1 › primary pages have no serious accessibility violations in both themes (12.8s)
+  ✓  15 [android] › tests/e2e/learner.spec.ts:227:1 › mobile menu and keyboard navigation work (683ms)
+  ✓  13 [desktop] › tests/e2e/learner.spec.ts:210:1 › primary pages have no serious accessibility violations in both themes (13.7s)
+  ✓  17 [desktop] › tests/e2e/learner.spec.ts:227:1 › mobile menu and keyboard navigation work (474ms)
+  ✓  16 [android] › tests/e2e/learner.spec.ts:262:1 › cached lessons, SQL and progress survive offline reload (857ms)
+  ✓  18 [desktop] › tests/e2e/learner.spec.ts:262:1 › cached lessons, SQL and progress survive offline reload (832ms)
+  ✓  20 [desktop] › tests/e2e/learner.spec.ts:297:1 › all 36 pilots permit assessed lesson completion and capstone self-review (33.1s)
+  ✓  19 [android] › tests/e2e/learner.spec.ts:297:1 › all 36 pilots permit assessed lesson completion and capstone self-review (34.0s)
+  ✓  21 [desktop] › tests/e2e/learner.spec.ts:344:1 › interactive guide, flashcard, diagram and ordering controls are usable (747ms)
+  ✓  22 [android] › tests/e2e/learner.spec.ts:344:1 › interactive guide, flashcard, diagram and ordering controls are usable (863ms)
+  ✓  23 [desktop] › tests/e2e/learner.spec.ts:386:1 › malformed local state is preserved and import cannot render hostile markup (563ms)
+  ✓  24 [android] › tests/e2e/learner.spec.ts:386:1 › malformed local state is preserved and import cannot render hostile markup (537ms)
+
+  24 passed (1.0m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

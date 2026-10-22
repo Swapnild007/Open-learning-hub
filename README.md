@@ -1,87 +1,54 @@
-# Open Learning Hub
+# Open Learning Hub 2.0 — development draft
 
-A mobile-first learning academy for Workforce Management, Microsoft Excel, Power BI, Python and Microsoft Power Automate.
+A mobile-first, local-first learning platform implemented with React, TypeScript and Vite. No account, API key or application server is needed.
 
-## Product principles
+**Current scope:** 36 course pilots across six tracks, containing 108 original topic lessons. Every pilot has worked examples, checkpoint feedback, practical assignments and a capstone brief with self-review criteria. These are usable pilots, **not 36 comprehensive beginner-to-advanced courses**. Full educational acceptance remains open for every course; see the completion matrix.
 
-- Teach capability, not just terminology.
-- Use progressive learning paths from fundamentals to advanced practice.
-- Include worked examples, realistic labs, assessments, troubleshooting and capstone projects.
-- Make the site usable on mobile, keyboard-accessible and lightweight.
-- Be transparent about what is implemented versus planned.
-- Keep basic browsing available without an account.
+## Run and verify
 
-## Current implementation
-
-- `index.html`: responsive academy catalogue, five tracks, search and filters, curriculum previews, local-browser exploration tracking, metadata and mobile navigation.
-- `wfm-curriculum.html`: a self-paced WFM learning experience with one fully authored interactive KPI lesson, four-stage/24-mission course map, browser-local resume/completion tracking gated by the lesson knowledge check, model-answer feedback and a supporting workload Practice Lab. It uses original teaching content and links to Call Centre Helper references.
-- `wfm-glossary.html`: searchable A–Z WFM glossary with 53 terms, illustrative formulas and metric-governance caveats.
-- `404.html`: branded not-found page.
-- `robots.txt`, `sitemap.xml`, `llms.txt`, `favicon.svg`: discovery and branding basics.
-
-**Important:** Only WFM Mission 01.1 is currently a fully authored lesson. The other 23 entries are mission briefs, not completed lessons. Lesson completion and resume state are saved in the current browser only. There are no accounts, cross-device sync, server-side grades or certificates.
-
-## LMS architecture decision
-
-This project is intentionally being developed as a lightweight, self-paced learning hub on GitHub Pages first. Its learning flow should lead with lessons, explanations, worked examples, knowledge checks and practical deliverables. Calculators are supporting practice tools, not the product itself.
-
-We reviewed the open-source [Frappe Learning LMS](https://github.com/frappe/lms), which supports structured courses, lessons, quizzes, assignments, learner progress and certificates. It is a real full-stack LMS, but self-hosting requires a server stack including Docker/Compose and persistent services; it is not a drop-in replacement for this static GitHub Pages site. The current implementation therefore adds a small client-side learner flow without pretending to provide multi-user LMS capabilities.
-
-**Upgrade trigger:** If the project needs learner accounts, instructor/admin roles, synced progress, graded submissions, cohorts or trusted certificates, plan a backend or evaluate deploying Frappe Learning as the LMS platform. Do not try to simulate secure accounts or official grades in browser-only JavaScript.
-
-## WFM source policy
-
-Call Centre Helper is a primary industry reference for WFM concepts, terminology, forecasting timelines, Erlang staffing, shrinkage, occupancy, scheduling and multichannel planning. The academy must author its own teaching content and web tools. Do not copy or redistribute publisher articles, downloadable workbooks, images, branding or code. Link to the original reference when it materially informs a lesson. Verify mathematical models independently and disclose assumptions and limitations.
-
-## Run locally
-
-Open `index.html` in a modern browser. For a local HTTP server:
+Requires Node.js 22.12+ and npm.
 
 ```bash
-python -m http.server 8000
+npm ci
+npm run dev
+npm run check
+npx playwright install --with-deps chromium
+npm run test:e2e
+npm audit --audit-level=moderate
 ```
 
-Then open `http://localhost:8000`. WFM pages: `/wfm-curriculum.html` and `/wfm-glossary.html`.
+`npm run build` produces `dist/`, including a production-only service worker. `npm run preview -- --port 4173` serves the built output locally. Use HTTP for development; double-clicking the source HTML will not run TSX. No public deployment is performed by these commands or by the CI workflow.
 
-## Publish with GitHub Pages
+## Implemented learning workflows
 
-1. Open repository **Settings → Pages**.
-2. Select **Deploy from a branch**.
-3. Choose `main` and `/(root)`, then save.
-4. Wait for deployment to complete and verify the published URL on desktop and mobile.
+- Home, catalog, track paths, course overviews, lesson reader, practice studio, projects, progress, bookmarks, search and settings.
+- Correct-answer checkpoints plus self-attested practical work gate lesson completion. Capstone self-review follows all course lessons.
+- Local progress, resume, bookmarks, learning streaks, reading size and themes. Validated JSON export/import; malformed stored data is preserved.
+- Browser SQLite, formula and visualization lab, constrained Python solution validation, flashcards, guided steps, architecture exploration and accessible ordering exercises.
+- Original synthetic practice data, downloadable project notes and transparent rubrics.
+- Production offline cache includes lesson content and browser SQL assets; original HTML readers cache after their first online visit.
 
-Expected project URL: `https://swapnild007.github.io/Open-learning-hub/`. A custom domain requires domain ownership and DNS configuration.
+## Preserved content
 
-## Prioritized delivery sequence
+Historical root WFM, Python and glossary files remain tracked. Their original public URLs are served from `public/`. Original catalog: `public/legacy/index.html`. The build repairs over-escaped Python sample display strings in served copies and corrects its lesson-count banner; it does not rewrite historical root content or migrate exploration into mastery.
 
-### P0 — Verification
-- Verify GitHub Pages deployment and published URLs.
-- Test mobile layouts, navigation, browser console, accessibility and metadata.
-- Add automated checks for broken links, HTML validity and accessibility regressions.
+## Review documents
 
-### P1 — Complete WFM content
-- Turn the 24 WFM missions into complete guided lessons with mission-specific inputs, exercises, validated answers and clear workplace deliverables. Avoid splitting useful topics into unnecessary micro-lessons.
-- Build original browser-native tools for forecasting, Erlang staffing, shrinkage, scheduling and multichannel capacity planning.
-- Include assumptions, validation cases, worked examples, exercises and source references.
-- Compare model outputs with independently calculated test cases before presenting them as reliable.
+- [Architecture and migration](docs/ARCHITECTURE.md)
+- [Repository audit](docs/REPOSITORY-AUDIT.md)
+- [Curriculum inventory](docs/CURRICULUM-INVENTORY.md)
+- [Course completion matrix](docs/COURSE-COMPLETION-MATRIX.md)
+- [Feature verification matrix](docs/FEATURE-VERIFICATION-MATRIX.md)
+- [Verification evidence](docs/VERIFICATION.md)
+- [Reference investigation](docs/REFERENCE-INVESTIGATION.md)
+- [Sources and licensing](docs/SOURCES-AND-LICENSING.md)
+- [Remaining work and release gates](docs/REMAINING-WORK.md)
+- [Responsive screenshots](docs/screenshots)
 
-### P1 — Other academies
-- Expand Excel, Power BI, Python and Power Automate into complete assessed curricula.
+## Hosting after separate approval
 
-### P1 — Finish the self-paced learner journey
-- Author the next complete lesson before marking its mission as available.
-- Add previous/next lesson navigation and a clear published-vs-planned state as more lessons are completed.
-- Expand quiz scoring and progress only alongside validated lesson content.
+Use any managed static host with build command `npm ci && npm run build` and output directory `dist`. Vite's relative base and hash routing support a project subpath. Existing GitHub Pages branch-root hosting must switch to serving a built artifact before adopting this migration. The included Actions workflow checks code and uploads test evidence; it contains no deployment job. Do not merge or deploy until the open gates have been reviewed.
 
-### P2 — Full LMS decision
-- Reassess a backend LMS when multi-user accounts, synced progress, graded submissions, cohorts or certificates are actually required.
-- Keep browser-local progress clearly labelled until then.
-- Add source review dates, content versioning and ongoing quality checks.
+## Product limits
 
-## Curriculum quality standard
-
-Each complete lesson should include learning objectives, prerequisites, an explanation of concepts and assumptions, a reproducible worked example, a hands-on lab, common mistakes, a knowledge check with explained answers, a workplace scenario and references to authoritative documentation.
-
-## Technical constraints
-
-This is a static site with no backend. Browser-local progress can be lost when site data is cleared and does not sync across devices. Never use confidential workplace data in public examples.
+Learning records are editable local state, not secure grades. No cross-device sync or trusted credentials are claimed. Python practice validates a constrained solution rather than running a Python interpreter. Browser-emulated Android testing does not establish physical-device PWA installation. Extended course authoring, richer assessment banks, subject-specific advanced labs, editorial validation and real-device checks remain required.

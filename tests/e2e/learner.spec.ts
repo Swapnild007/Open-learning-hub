@@ -405,13 +405,19 @@ test("settings controls and generated legacy readers preserve usable state", asy
   context,
 }) => {
   await open(page, "settings");
-  await page.getByLabel("Theme", { exact: true }).selectOption("dark");
-  await page.getByLabel("Reading size", { exact: true }).selectOption("22");
+  await page
+    .getByRole("combobox", { name: "Theme", exact: true })
+    .selectOption("dark");
+  await page
+    .getByRole("combobox", { name: "Reading size", exact: true })
+    .selectOption("22");
   await page.reload();
-  await expect(page.getByLabel("Theme", { exact: true })).toHaveValue("dark");
-  await expect(page.getByLabel("Reading size", { exact: true })).toHaveValue(
-    "22",
-  );
+  await expect(
+    page.getByRole("combobox", { name: "Theme", exact: true }),
+  ).toHaveValue("dark");
+  await expect(
+    page.getByRole("combobox", { name: "Reading size", exact: true }),
+  ).toHaveValue("22");
   await page.goto("/#/lesson/wfm-1");
   await expect(page.locator("article.reader")).toHaveCSS("font-size", "22px");
   await page
@@ -434,7 +440,7 @@ test("settings controls and generated legacy readers preserve usable state", asy
   await page.reload();
   await expect(
     page.getByRole("heading", {
-      name: "Python, the interpreter and your first program",
+      name: "Python and your first program",
       exact: true,
     }),
   ).toBeVisible();
