@@ -4,9 +4,13 @@ A mobile-first, local-first learning platform implemented with React, TypeScript
 
 **Current scope:** 36 course pilots across six tracks, containing 108 original topic lessons. Every pilot has worked examples, checkpoint feedback, practical assignments and a capstone brief with self-review criteria. These are usable pilots, **not 36 comprehensive beginner-to-advanced courses**. Full educational acceptance remains open for every course; see the completion matrix.
 
+## Python Academy implementation checkpoint
+
+The featured `#/python` studio adds six detailed chapters with real Pyodide/CPython execution, pandas/NumPy, syntax-highlighted editable labs, behavior checks, local notes and notebook export/import. It is **not yet the complete Python course**. See [the implementation checkpoint](docs/python/IMPLEMENTATION-CHECKPOINT.md) and [machine-readable coverage](docs/python/coverage.json) for exact gaps, runtime limits, verification and continuation steps. All 36 pilots and legacy URLs remain available.
+
 ## Run and verify
 
-Requires Node.js 22.12+ and npm.
+Requires Node.js 22.13+ and npm.
 
 ```bash
 npm ci

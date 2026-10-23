@@ -1,3 +1,5 @@
+import { lazy, Suspense } from "react";
+const PythonAcademy = lazy(() => import("./python/PythonAcademy"));
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Overview from "./pages/Overview";
@@ -43,6 +45,7 @@ import Practice from "./components/Practice";
 const nav = [
   ["Home", "home", Compass],
   ["Catalog", "catalog", LayoutGrid],
+  ["Python Academy", "python", BookOpen],
   ["Learning Paths", "paths", BookOpen],
   ["Practice", "practice", FlaskConical],
   ["Projects", "projects", FolderOpen],
@@ -262,7 +265,7 @@ export default function App() {
       )}
       <main
         id="main-content"
-        className={`main ${page === "lesson" ? "reader-main" : ""}`}
+        className={`main ${page === "lesson" || page === "python" ? "reader-main" : ""}`}
         tabIndex={-1}
         ref={main}
       >
@@ -285,6 +288,14 @@ export default function App() {
         )}
         {page === "home" ? (
           <Home progress={progress} />
+        ) : page === "python" ? (
+          <Suspense fallback={<p role="status">Loading Python studio…</p>}>
+            <PythonAcademy
+              key={id || "syllabus"}
+              id={id}
+              dark={progress.theme === "dark"}
+            />
+          </Suspense>
         ) : page === "catalog" ? (
           <Catalog progress={progress} />
         ) : page === "paths" ? (

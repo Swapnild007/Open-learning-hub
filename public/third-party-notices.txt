@@ -114,3 +114,11 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
+Python Academy runtime and editor:
+- Pyodide 0.27.7: MPL-2.0; https://github.com/pyodide/pyodide
+- CPython 3.12: PSF License; https://docs.python.org/3.12/license.html
+- pandas 2.2.3 and NumPy 2.0.2: BSD-3-Clause (distributed Pyodide wheels retain package notices).
+- python-dateutil 2.9.0.post0: Apache-2.0 OR BSD-3-Clause; pytz 2024.1: MIT; six 1.16.0: MIT.
+- CodeMirror 6 and @uiw/react-codemirror: MIT; https://codemirror.net/ and https://github.com/uiwjs/react-codemirror
+See pinned packages and wheel distribution metadata for full license texts. Academy teaching prose and exercises are original; no certification or endorsement is implied.

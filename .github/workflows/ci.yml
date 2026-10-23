@@ -27,4 +27,6 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            docs/python/execution-evidence.json
+            docs/python/coverage.json
           retention-days: 14

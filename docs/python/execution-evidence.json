@@ -1,0 +1,49 @@
+{
+  "runtime": "Pyodide 0.27.7 / CPython 3.12",
+  "checks": 42,
+  "lessons": [
+    {
+      "id": "variables",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    },
+    {
+      "id": "loops",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    },
+    {
+      "id": "functions",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    },
+    {
+      "id": "exceptions",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    },
+    {
+      "id": "objects",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    },
+    {
+      "id": "pandas",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    }
+  ],
+  "review": "Automated executable checks only; independent editorial review pending."
+}

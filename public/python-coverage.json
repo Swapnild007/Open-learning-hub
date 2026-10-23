@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "courseComplete": false,
+  "editorialReview": "pending independent review",
+  "physicalAndroid": "unverified",
+  "requiredTopics": [
+    {
+      "topic": "Setup, REPL and scripts",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/variables",
+      "examples": [
+        "From demand to workload",
+        "Convert input and observe rebinding"
+      ],
+      "behaviorTests": [
+        "variables-workload",
+        "variables-input"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Variables and assignment",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/variables",
+      "examples": [
+        "From demand to workload",
+        "Convert input and observe rebinding"
+      ],
+      "behaviorTests": [
+        "variables-workload",
+        "variables-input"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Data types and operators",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/variables",
+      "examples": [
+        "From demand to workload",
+        "Convert input and observe rebinding"
+      ],
+      "behaviorTests": [
+        "variables-workload",
+        "variables-input"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Strings and input/output",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/variables",
+      "examples": [
+        "From demand to workload",
+        "Convert input and observe rebinding"
+      ],
+      "behaviorTests": [
+        "variables-workload",
+        "variables-input"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Conditionals",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/loops",
+      "examples": [
+        "Accept observations explicitly",
+        "Number a filtered report"
+      ],
+      "behaviorTests": [
+        "loops-sum",
+        "loops-labels"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Loops and comprehensions",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/loops",
+      "examples": [
+        "Accept observations explicitly",
+        "Number a filtered report"
+      ],
+      "behaviorTests": [
+        "loops-sum",
+        "loops-labels"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Lists, tuples, dictionaries and sets",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Functions and scope",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/functions",
+      "examples": [
+        "Calculate first, format later",
+        "Avoid shared defaults"
+      ],
+      "behaviorTests": [
+        "functions-hours",
+        "functions-default"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Modules and packages",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Standard library",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Exceptions and debugging",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/exceptions",
+      "examples": [
+        "Reject an invalid count explicitly",
+        "Cleanup runs even when parsing fails"
+      ],
+      "behaviorTests": [
+        "exceptions-count",
+        "exceptions-safe"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Files, pathlib, CSV and JSON",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Virtual environments and pip",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Typing and docstrings",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Testing with unittest and pytest",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "OOP and dataclasses",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/objects",
+      "examples": [
+        "Protect the count invariant",
+        "A record with an independent list"
+      ],
+      "behaviorTests": [
+        "objects-counter",
+        "objects-record"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Iterators and generators",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Decorators",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Context managers",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Concurrency and async",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Performance",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Security",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "NumPy",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Pandas cleaning and aggregation",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/pandas",
+      "examples": [
+        "Keep a rejection count",
+        "Rebuild a ratio from additive components"
+      ],
+      "behaviorTests": [
+        "pandas-total",
+        "pandas-ratio"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Pandas joins",
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/pandas",
+      "examples": [
+        "Keep a rejection count",
+        "Rebuild a ratio from additive components"
+      ],
+      "behaviorTests": [
+        "pandas-total",
+        "pandas-ratio"
+      ],
+      "review": "pending"
+    },
+    {
+      "topic": "Visualization",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "HTTP APIs",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Automation and reproducibility",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    },
+    {
+      "topic": "Reporting pipeline capstone",
+      "status": "not authored",
+      "lessonURL": null,
+      "examples": [],
+      "behaviorTests": [],
+      "review": "pending"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "variables",
+      "url": "#/python/variables",
+      "words": 620,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://docs.python.org/3.12/tutorial/introduction.html"
+      ]
+    },
+    {
+      "id": "loops",
+      "url": "#/python/loops",
+      "words": 552,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://docs.python.org/3.12/tutorial/controlflow.html"
+      ]
+    },
+    {
+      "id": "functions",
+      "url": "#/python/functions",
+      "words": 564,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://docs.python.org/3.12/tutorial/controlflow.html"
+      ]
+    },
+    {
+      "id": "exceptions",
+      "url": "#/python/exceptions",
+      "words": 513,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://docs.python.org/3.12/tutorial/errors.html"
+      ]
+    },
+    {
+      "id": "objects",
+      "url": "#/python/objects",
+      "words": 518,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://docs.python.org/3.12/tutorial/classes.html",
+        "https://docs.python.org/3.12/library/dataclasses.html"
+      ]
+    },
+    {
+      "id": "pandas",
+      "url": "#/python/pandas",
+      "words": 605,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html"
+      ]
+    }
+  ]
+}

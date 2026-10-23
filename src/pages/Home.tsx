@@ -75,6 +75,18 @@ export default function Home({ progress }: { progress: Progress }) {
           <div className="art-dot dot-two" />
         </div>
       </section>
+      <section className="python-feature">
+        <span className="eyebrow">FEATURED · PYTHON ACADEMY</span>
+        <h2>Think it through. Run it for real.</h2>
+        <p>
+          Detailed explanations, executable Python, behavior checks and a
+          personal notebook. Six chapters are available in the development
+          edition; the full course remains in progress.
+        </p>
+        <a className="primary" href="#/python">
+          Enter the Python studio →
+        </a>
+      </section>
       <div className="home-strip">
         <span>
           <Check size={17} />
