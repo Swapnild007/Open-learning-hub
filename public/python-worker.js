@@ -11,14 +11,31 @@ self.onmessage = async ({ data }) => {
     const python = await loadPyodide({ indexURL: new URL('./python-runtime/', self.location.href).href,
       stdin: () => { throw Error('Interactive input is unavailable. Use the supplied input data instead.'); },
       stdout: text => append('stdout', text + '\n'), stderr: text => append('stderr', text + '\n') });
-    if (data.packages?.includes('pandas')) await python.loadPackage('pandas');
+    if (data.packages?.includes('pandas')) {
+      await python.loadPackage('pandas');
+      // Importing pandas/NumPy is runtime initialization, not learner execution.
+      // Warm it before ready so slower phones keep the full execution budget.
+      await python.runPythonAsync('import pandas');
+    }
+    // Byte writers preserve partial lines, blank lines and Unicode exactly.
+    // Batched callbacks add newlines and omit unflushed print(end='') output.
+    const outputDecoder = new TextDecoder();
+    const errorDecoder = new TextDecoder();
+    python.setStdout({ write: buffer => {
+      append('stdout', outputDecoder.decode(buffer, { stream: true }));
+      return buffer.length;
+    } });
+    python.setStderr({ write: buffer => {
+      append('stderr', errorDecoder.decode(buffer, { stream: true }));
+      return buffer.length;
+    } });
     // Initialization diagnostics are not learner program output.
     stdout = ''; stderr = '';
     self.postMessage({ type: 'ready' });
     const scope = python.toPy({ __name__: '__main__' });
     try {
       scope.set('__code', data.code);
-      await python.runPythonAsync('exec(compile(__code, "learner.py", "exec"), globals())', { globals: scope });
+      await python.runPythonAsync('try:\n    exec(compile(__code, "learner.py", "exec"), globals())\nfinally:\n    __import__("sys").stdout.flush()\n    __import__("sys").stderr.flush()', { globals: scope });
       const output = stdout;
       let passed = null;
       if (data.tests) {

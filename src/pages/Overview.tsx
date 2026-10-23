@@ -23,6 +23,25 @@ export default function Overview({
         text="Choose a course from the catalog."
       />
     );
+  if (id === "python")
+    return (
+      <section className="panel python-feature">
+        <span className="eyebrow">PYTHON · EXECUTABLE LEARNING</span>
+        <h1>Learn Python by running it.</h1>
+        <p>
+          Six foundation chapters with editable code, real Python output,
+          behavior checks and personal notes saved on this device.
+        </p>
+        <a className="primary" href="#/python/variables">
+          Start the beginner lesson
+        </a>{" "}
+        <a href="#/python">View the Python syllabus</a>
+        <p>
+          The full beginner-to-advanced curriculum and capstone are still in
+          development.
+        </p>
+      </section>
+    );
   const first =
     c.lessons.find((l) => !progress.completed.includes(l.id)) || c.lessons[0];
   return (
@@ -113,11 +132,6 @@ export default function Overview({
           <ArrowUpRight size={18} />
         </a>
       </section>
-      {id === "python" && (
-        <a href="./python-curriculum.html">
-          Explore the preserved original Python academy ↗
-        </a>
-      )}
       {id === "wfm" && (
         <a href="./wfm-curriculum.html">
           Explore the preserved original WFM lesson ↗

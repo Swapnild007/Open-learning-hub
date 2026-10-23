@@ -378,3 +378,49 @@
 .python-academy .py-token-operator {
   color: var(--py-operator);
 }
+
+.python-build {
+  font-size: 12px !important;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 760px) {
+  .python-heading p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .python-notebook-actions {
+    gap: 8px;
+    padding-bottom: 16px;
+  }
+  .python-syllabus {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .workspace-read .python-syllabus ol {
+    display: none;
+  }
+  .python-syllabus h2 {
+    margin: 10px 0;
+  }
+  .python-lab .cm-editor {
+    font-size: 16px;
+  }
+  .python-notes textarea {
+    font-size: 16px;
+  }
+}
+
+.python-error-summary {
+  border-left: 4px solid #b54318;
+  padding: 12px;
+  background: #fff0e7;
+  color: #7d2b11;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+[data-theme="dark"] .python-error-summary {
+  background: #40291f;
+  color: #ffddc8;
+}

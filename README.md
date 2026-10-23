@@ -6,7 +6,7 @@ A mobile-first, local-first learning platform implemented with React, TypeScript
 
 ## Python Academy implementation checkpoint
 
-The featured `#/python` studio adds six detailed chapters with real Pyodide/CPython execution, pandas/NumPy, syntax-highlighted editable labs, behavior checks, local notes and notebook export/import. It is **not yet the complete Python course**. See [the implementation checkpoint](docs/python/IMPLEMENTATION-CHECKPOINT.md) and [machine-readable coverage](docs/python/coverage.json) for exact gaps, runtime limits, verification and continuation steps. All 36 pilots and legacy URLs remain available.
+The featured `#/python` studio adds six detailed chapters with real Pyodide/CPython execution, pandas/NumPy, syntax-highlighted editable labs, behavior checks, local notes and notebook export/import. It is **not yet the complete Python course**. See [the implementation checkpoint](docs/python/IMPLEMENTATION-CHECKPOINT.md) and [machine-readable coverage](docs/python/coverage.json) for exact gaps, runtime limits, verification and continuation steps. All 36 pilots and legacy URLs remain available. The Python catalog now leads to the executable beginner chapter; archived readers are explicitly labelled. See [public-site versus PR verification](docs/python/ANDROID-VERIFICATION.md).
 
 ## Run and verify
 
@@ -55,4 +55,4 @@ Use any managed static host with build command `npm ci && npm run build` and out
 
 ## Product limits
 
-Learning records are editable local state, not secure grades. No cross-device sync or trusted credentials are claimed. Python practice validates a constrained solution rather than running a Python interpreter. Browser-emulated Android testing does not establish physical-device PWA installation. Extended course authoring, richer assessment banks, subject-specific advanced labs, editorial validation and real-device checks remain required.
+Learning records are editable local state, not secure grades. No cross-device sync or trusted credentials are claimed. The general practice page retains a constrained Python syntax validator; the dedicated Python Academy runs real Pyodide/CPython and behavior-graded exercises. Browser-emulated Android testing does not establish physical-device PWA installation. Extended course authoring, richer assessment banks, subject-specific advanced labs, editorial validation and real-device checks remain required.

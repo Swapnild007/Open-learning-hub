@@ -96,6 +96,9 @@ export default function PythonAcademy({
     <div className="python-academy">
       <header className="python-heading">
         <span className="eyebrow">PYTHON ACADEMY · DEVELOPMENT EDITION</span>
+        <p className="python-build" aria-label="Python build">
+          Studio build {import.meta.env.OLH_BUILD_ID} · Pyodide 0.27.7
+        </p>
         <h1>
           {lesson ? lesson.title : "Learn the language. Build the evidence."}
         </h1>
@@ -360,6 +363,14 @@ export default function PythonAcademy({
                         }),
                       );
                       setTab("Code");
+                      requestAnimationFrame(() =>
+                        document
+                          .querySelector(".python-workspace")
+                          ?.scrollIntoView({
+                            block: "start",
+                            behavior: "smooth",
+                          }),
+                      );
                     }}
                   >
                     Open example {i + 1} in the coding lab
@@ -734,6 +745,15 @@ function PythonLab({
         {result?.stdout || "(no output)"}
       </pre>
       <h3>stderr & check feedback</h3>
+      {result?.stderr && (
+        <p role="alert" className="python-error-summary">
+          {result.stderr
+            .split("\n")
+            .map((line) => line.trim())
+            .filter(Boolean)
+            .at(-1)}
+        </p>
+      )}
       <pre className="python-output python-stderr" aria-label="Python stderr">
         {result?.stderr || "(no errors)"}
       </pre>

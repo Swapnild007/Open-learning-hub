@@ -42,6 +42,18 @@ export default function LessonReader({
     bookmarked = progress.bookmarks.includes(id);
   return (
     <div className="reader-layout">
+      {course.id === "python" && (
+        <section className="panel" style={{ gridColumn: "1 / -1" }}>
+          <h2>Looking for runnable Python?</h2>
+          <p>
+            This archived concept pilot uses self-review. It does not count
+            toward Python Academy completion.
+          </p>
+          <a className="primary" href="#/python/variables">
+            Open the executable beginner lesson
+          </a>
+        </section>
+      )}
       <aside className="lesson-sidebar">
         <a className="backlink" href={`#/course/${course.id}`}>
           <ChevronLeft size={15} /> Course overview

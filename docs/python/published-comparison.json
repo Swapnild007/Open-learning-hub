@@ -1,0 +1,12 @@
+{
+  "url": "https://swapnild007.github.io/Open-learning-hub/python-curriculum.html",
+  "checkedAt": "2026-10-23T16:50:02.973Z",
+  "status": 200,
+  "lastModified": "Wed, 14 Oct 2026 12:35:06 GMT",
+  "sha256": "ea05c6bf6d5ccefb1754e37e53a3c08571784002227681875c4ef75080c6b719",
+  "matchesRepositoryStaticFile": true,
+  "runButtons": 0,
+  "editors": 0,
+  "selfAttestedPractice": 1,
+  "codeSample": "print(\\\"Hello, Python!\\\")\\\nprint(2 + 3)"
+}

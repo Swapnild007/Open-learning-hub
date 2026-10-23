@@ -289,3 +289,138 @@ test("Python studio is responsive, keyboard reachable and accessible in both the
   await editor.press("Tab");
   await expect(editor).not.toBeFocused();
 });
+
+test("beginner examples are highlighted and editable; exact streams, syntax errors and behavior gates work", async ({
+  page,
+}, testInfo) => {
+  test.setTimeout(120000);
+  await page.goto("/#/course/python");
+  await page.getByRole("link", { name: "Start the beginner lesson" }).click();
+  await expect(page.getByLabel("Python build", { exact: true })).toContainText(
+    /Studio build [a-f0-9]{12}/,
+  );
+  await expect(
+    page.locator(".python-prose .py-token-string").first(),
+  ).toBeVisible();
+  const example = pythonLessons[0].examples[0];
+  await expect(
+    page.locator(".python-prose .cm-content").first().locator(".cm-line"),
+  ).toHaveText(example.code.split("\n"));
+  await page
+    .getByRole("button", { name: "Open example 1 in the coding lab" })
+    .click();
+  await expect(page.locator(".python-lab .cm-content .cm-line")).toHaveText(
+    example.code.split("\n"),
+  );
+  const run = async () => {
+    await page.getByRole("button", { name: "Run code", exact: true }).click();
+    await expect(
+      page.getByRole("button", { name: "Run code", exact: true }),
+    ).toBeEnabled({ timeout: 60000 });
+  };
+  await run();
+  expect(
+    await page.getByLabel("Python stdout", { exact: true }).textContent(),
+  ).toBe("Workload: 10.00 hours\n");
+  await setCode(
+    page,
+    'import sys\nprint("नमस्ते", end="")\nprint(" warning", file=sys.stderr, end="")',
+  );
+  await run();
+  expect(
+    await page.getByLabel("Python stdout", { exact: true }).textContent(),
+  ).toBe("नमस्ते");
+  expect(
+    await page.getByLabel("Python stderr", { exact: true }).textContent(),
+  ).toBe(" warning");
+  await setCode(page, 'print("before failure")\nraise ValueError("try again")');
+  await run();
+  expect(
+    await page.getByLabel("Python stdout", { exact: true }).textContent(),
+  ).toBe("before failure\n");
+  await expect(page.getByLabel("Python stderr", { exact: true })).toContainText(
+    "ValueError: try again",
+  );
+  await setCode(page, 'if True\n    print("missing colon")');
+  await run();
+  await expect(page.getByLabel("Python stderr", { exact: true })).toContainText(
+    "SyntaxError",
+  );
+  await expect(page.getByLabel("Python stderr", { exact: true })).toContainText(
+    "learner.py",
+  );
+  await page.screenshot({
+    path: testInfo.outputPath("beginner-syntax-error.png"),
+  });
+  await page.getByLabel("Choose a practice task").selectOption("0");
+  // Correct-looking stdout alone cannot satisfy the numeric behavior check.
+  await setCode(page, 'hours = 0\nprint("Workload: 7.00 hours")');
+  await check(page);
+  await expect(page.getByLabel("Python stderr", { exact: true })).toContainText(
+    "AssertionError",
+  );
+  await expect(page.locator(".python-lab")).not.toContainText(
+    "✓ Behavior checks passed.",
+  );
+  // A different implementation passes without matching the reference source.
+  await setCode(
+    page,
+    'contacts, minutes_per_contact = 84, 5\nhours = sum([minutes_per_contact] * contacts) / 60\nprint("Workload: {:.2f} hours".format(hours))',
+  );
+  await check(page);
+  await expect(page.locator(".python-lab")).toContainText(
+    "✓ Behavior checks passed.",
+  );
+  await page.screenshot({
+    path: testInfo.outputPath("beginner-behavior-pass.png"),
+  });
+  await readTab(page);
+  await expect(
+    page.getByRole("button", { name: "Complete Python chapter", exact: true }),
+  ).toBeDisabled();
+  await expect(page.getByRole("checkbox")).toHaveCount(0);
+  const tabs = page.getByRole("group", { name: "Lesson workspace" });
+  if (await tabs.isVisible())
+    await tabs.getByRole("button", { name: "Notes", exact: true }).click();
+  await page
+    .getByLabel("Personal notes", { exact: true })
+    .fill("My first program: names bind to values.");
+  await page.reload();
+  await expect(page.locator(".python-academy")).toBeVisible();
+  if (await tabs.isVisible())
+    await tabs.getByRole("button", { name: "Notes", exact: true }).click();
+  await expect(page.getByLabel("Personal notes", { exact: true })).toHaveValue(
+    "My first program: names bind to values.",
+  );
+  await codeTab(page);
+  expect(await page.locator(".python-lab .cm-content").textContent()).toContain(
+    "sum([minutes_per_contact] * contacts)",
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth + 1,
+    ),
+  ).toBe(true);
+});
+
+test("preserved static Python URLs clearly lead to the executable studio", async ({
+  page,
+}) => {
+  for (const path of [
+    "/python-curriculum.html",
+    "/legacy/python-curriculum.html",
+  ]) {
+    await page.goto(path);
+    await expect(page.getByLabel("Archived Python reader")).toContainText(
+      "does not execute Python",
+    );
+    await page
+      .getByRole("link", { name: "Open the executable beginner lesson →" })
+      .click();
+    await expect(page.locator(".python-academy")).toBeVisible();
+    await codeTab(page);
+    await expect(
+      page.getByRole("button", { name: "Run code", exact: true }),
+    ).toBeEnabled();
+  }
+});

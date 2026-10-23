@@ -176,7 +176,10 @@ test("all course and lesson routes resolve without horizontal overflow or consol
   for (const c of courses) {
     await open(page, `course/${c.id}`);
     await expect(
-      page.getByRole("heading", { name: c.title, exact: true }),
+      page.getByRole("heading", {
+        name: c.id === "python" ? "Learn Python by running it." : c.title,
+        exact: true,
+      }),
     ).toBeVisible();
     for (const l of c.lessons) {
       await page.goto(`/#/lesson/${l.id}`);
@@ -195,6 +198,8 @@ test("all course and lesson routes resolve without horizontal overflow or consol
 test("primary pages have no serious accessibility violations in both themes", async ({
   page,
 }) => {
+  // Twenty-four full-page axe scans need more than the default per-test budget on shared runners.
+  test.setTimeout(120000);
   for (const route of [
     "home",
     "catalog",

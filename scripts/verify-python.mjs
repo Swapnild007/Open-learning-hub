@@ -10,16 +10,20 @@ let count = 0;
 function execute(code, tests) {
   let output = "";
   py.setStdout({
-    batched: (line) => {
-      output += line + "\n";
+    write: (buffer) => {
+      output += new TextDecoder().decode(buffer);
+      return buffer.length;
     },
   });
   const scope = py.toPy({ __name__: "__main__" });
   try {
     scope.set("__code", code);
-    py.runPython('exec(compile(__code,"learner.py","exec"),globals())', {
-      globals: scope,
-    });
+    py.runPython(
+      'try:\n    exec(compile(__code,"learner.py","exec"),globals())\nfinally:\n    __import__("sys").stdout.flush()\n    __import__("sys").stderr.flush()',
+      {
+        globals: scope,
+      },
+    );
     if (tests) {
       scope.set("__observed_stdout", output);
       scope.set("__tests", tests);

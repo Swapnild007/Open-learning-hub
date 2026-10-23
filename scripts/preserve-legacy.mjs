@@ -23,8 +23,16 @@ migrated = migrated
   .replace("16 guided lessons", `${lessons.length} guided lessons`)
   .replace('aria-valuemax="16"', `aria-valuemax="${lessons.length}"`)
   .replace("0 of 16 lessons passed", `0 of ${lessons.length} lessons passed`);
-for (const prefix of ["public/", "public/legacy/"])
-  fs.writeFileSync(prefix + "python-curriculum.html", migrated);
+for (const prefix of ["public/", "public/legacy/"]) {
+  const destination = prefix.includes("legacy/")
+    ? "../index.html#/python/variables"
+    : "./index.html#/python/variables";
+  const banner = `<aside aria-label="Archived Python reader" style="padding:20px;background:#edf7ef;color:#173b31"><strong>Archived static reader</strong><p>This page shows examples and self-review only. It does not execute Python or award Academy completion.</p><a href="${destination}">Open the executable beginner lesson →</a></aside>`;
+  fs.writeFileSync(
+    prefix + "python-curriculum.html",
+    migrated.replace(/(<body[^>]*>)/, "$1" + banner),
+  );
+}
 fs.writeFileSync(
   "/tmp/legacy-python-examples.json",
   JSON.stringify(lessons.map((l) => ({ id: l.id, code: l.code }))),
