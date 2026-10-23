@@ -1,0 +1,426 @@
+.python-academy {
+  --py-accent: #246556;
+  --py-panel: var(--surface, #fff);
+  max-width: 1800px;
+  margin: auto;
+}
+.python-heading {
+  max-width: 900px;
+  padding: 16px 0 28px;
+}
+.python-heading h1 {
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+.python-heading p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.python-notebook-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0 24px;
+}
+.python-import {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.python-import input {
+  max-width: 200px;
+}
+.python-workspace {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1.2fr) minmax(330px, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.python-syllabus {
+  position: sticky;
+  top: 20px;
+  font-size: 14px;
+  max-height: 90vh;
+  overflow: auto;
+}
+.python-syllabus h2 {
+  font-size: 18px;
+}
+.python-syllabus ol {
+  padding-left: 20px;
+}
+.python-syllabus li {
+  margin-bottom: 16px;
+}
+.python-syllabus a[aria-current="page"] {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.python-prose {
+  min-width: 0;
+  font-size: 18px;
+  line-height: 1.85;
+}
+.python-prose section {
+  margin: 0 0 36px;
+}
+.python-prose h2 {
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  margin: 28px 0 18px;
+}
+.python-prose h3 {
+  font-size: 19px;
+  line-height: 1.5;
+}
+.python-prose p {
+  margin: 0 0 22px;
+}
+.python-prose li {
+  margin-bottom: 10px;
+}
+.python-prose .cm-editor {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.python-syntax > div {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border, #ddd);
+}
+.python-syntax dd {
+  margin: 8px 0;
+}
+.python-lab-rail {
+  min-width: 0;
+  position: sticky;
+  top: 20px;
+  max-height: 94vh;
+  overflow: auto;
+}
+.python-lab {
+  padding: 22px !important;
+}
+.python-lab h2 {
+  margin-top: 8px;
+}
+.python-lab label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.python-lab select {
+  width: 100%;
+  min-height: 44px;
+  margin-bottom: 12px;
+}
+.python-lab .cm-editor {
+  font-size: 14px;
+  min-height: 230px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.python-lab .cm-scroller {
+  min-height: 230px;
+  max-height: 420px;
+}
+.python-code-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+.python-academy button {
+  min-height: 44px;
+  white-space: normal;
+}
+.python-output {
+  padding: 16px;
+  background: #132323;
+  color: #effaf4;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 1.7;
+  max-height: 300px;
+  overflow: auto;
+}
+.python-stderr {
+  color: #ffd7bd;
+}
+.python-notes {
+  margin-top: 20px;
+}
+.python-notes label {
+  display: block;
+  font-weight: 700;
+}
+.python-notes textarea {
+  width: 100%;
+  min-height: 220px;
+  line-height: 1.7;
+  padding: 12px;
+  resize: vertical;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--border, #bbb);
+  border-radius: 10px;
+}
+.python-mobile-tabs {
+  display: none;
+}
+.python-syllabus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.python-chapter {
+  color: inherit;
+  text-decoration: none;
+}
+.python-chapter:hover {
+  outline: 2px solid var(--py-accent);
+}
+.python-chapter h2 {
+  font-size: 24px;
+}
+.python-feature {
+  margin: 24px 0;
+  padding: 28px;
+  border-radius: 22px;
+  border: 1px solid var(--border, #ddd);
+  background: linear-gradient(125deg, #e4f4eb, #e6edff);
+  color: #183b31;
+}
+.python-feature h2 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+.python-feature .primary {
+  background: #245b4c;
+  color: #fff;
+}
+.python-academy :focus-visible {
+  outline: 3px solid #387eeb;
+  outline-offset: 3px;
+}
+@media (min-width: 1600px) {
+  .python-workspace {
+    grid-template-columns: 210px minmax(0, 1.3fr) minmax(360px, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .python-workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(310px, 1fr);
+  }
+  .python-syllabus {
+    position: static;
+    grid-column: 1/-1;
+    max-height: none;
+  }
+  .python-syllabus ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-left: 20px;
+  }
+  .python-syllabus li {
+    margin-right: 15px;
+  }
+  .python-lab-rail {
+    top: 10px;
+  }
+}
+@media (max-width: 760px) {
+  .python-mobile-tabs {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 0;
+    background: var(--bg, #f7f8fa);
+  }
+  .python-mobile-tabs button[aria-pressed="true"] {
+    background: #245b4c;
+    color: #fff;
+  }
+  .python-workspace {
+    display: block;
+  }
+  .python-syllabus {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .python-syllabus ol {
+    display: block;
+  }
+  .python-syllabus li {
+    margin-bottom: 9px;
+  }
+  .python-prose {
+    font-size: 17px;
+  }
+  .python-lab-rail {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+  .workspace-read .python-lab-rail {
+    display: none;
+  }
+  .workspace-code .python-prose,
+  .workspace-code .python-syllabus,
+  .workspace-code .python-notes {
+    display: none;
+  }
+  .workspace-notes .python-prose,
+  .workspace-notes .python-syllabus,
+  .workspace-notes .python-lab {
+    display: none;
+  }
+  .python-syllabus-grid {
+    grid-template-columns: 1fr;
+  }
+  .python-notebook-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .python-lab {
+    padding: 16px !important;
+  }
+  .python-code-actions button {
+    flex: 1 1 40%;
+  }
+  .python-prose .cm-editor {
+    font-size: 13px;
+  }
+  .python-prose section {
+    margin-bottom: 28px;
+  }
+  .python-heading {
+    padding-bottom: 12px;
+  }
+  .python-heading h1 {
+    font-size: 32px;
+  }
+  .python-feature {
+    padding: 22px;
+  }
+}
+
+/* Keep pane controls below the shared application header. */
+.python-syllabus,
+.python-lab-rail {
+  top: 100px;
+  max-height: calc(100vh - 116px);
+}
+@media (max-width: 1200px) {
+  .python-syllabus {
+    max-height: none;
+  }
+  .python-lab-rail {
+    top: 100px;
+  }
+}
+@media (max-width: 760px) {
+  .python-mobile-tabs {
+    top: 72px;
+  }
+  .python-syllabus,
+  .python-lab-rail {
+    max-height: none;
+  }
+  .python-workspace {
+    scroll-margin-top: 142px;
+  }
+}
+
+/* Stable token classes override editor theme defaults with measured AA colors. */
+.python-academy {
+  --py-keyword: #6336ae;
+  --py-string: #9a3412;
+  --py-number: #006246;
+  --py-comment: #5a667d;
+  --py-variable: #213449;
+  --py-operator: #354154;
+}
+[data-theme="dark"] .python-academy {
+  --py-keyword: #c4b5fd;
+  --py-string: #fdbb86;
+  --py-number: #86efac;
+  --py-comment: #a0aebb;
+  --py-variable: #e6edf6;
+  --py-operator: #cbd5e1;
+}
+.python-academy .py-token-keyword {
+  color: var(--py-keyword);
+}
+.python-academy .py-token-string {
+  color: var(--py-string);
+}
+.python-academy .py-token-number {
+  color: var(--py-number);
+}
+.python-academy .py-token-comment {
+  color: var(--py-comment);
+}
+.python-academy .py-token-variable {
+  color: var(--py-variable);
+}
+.python-academy .py-token-operator {
+  color: var(--py-operator);
+}
+
+.python-build {
+  font-size: 12px !important;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 760px) {
+  .python-heading p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .python-notebook-actions {
+    gap: 8px;
+    padding-bottom: 16px;
+  }
+  .python-syllabus {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .workspace-read .python-syllabus ol {
+    display: none;
+  }
+  .python-syllabus h2 {
+    margin: 10px 0;
+  }
+  .python-lab .cm-editor {
+    font-size: 16px;
+  }
+  .python-notes textarea {
+    font-size: 16px;
+  }
+}
+
+.python-error-summary {
+  border-left: 4px solid #b54318;
+  padding: 12px;
+  background: #fff0e7;
+  color: #7d2b11;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+[data-theme="dark"] .python-error-summary {
+  background: #40291f;
+  color: #ffddc8;
+}

@@ -1,0 +1,42 @@
+# Curriculum inventory
+
+Authoring inventory: 36 course pilots, 6 tracks, 108 original lessons. Scope: expand existing subjects, selected by the user during this task. These titles are the recorded expansion, not a recovered historic 36-title agreement.
+
+| Track                    | Course ID        | Course                            | Prerequisites              | Modules / lessons                                                                                    |
+| ------------------------ | ---------------- | --------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Workforce Management     | wfm              | WFM Foundations                   | None                       | Define the reporting contract; Aggregate with the right weights; Diagnose cumulative snapshots       |
+| Workforce Management     | forecasting      | Demand Forecasting                | wfm                        | Create a seasonal baseline; Measure error and bias; Backtest without future leakage                  |
+| Workforce Management     | staffing         | Queueing & Staffing               | wfm                        | Calculate offered load; Understand Erlang C assumptions; Apply shrinkage once                        |
+| Workforce Management     | scheduling       | Scheduling & Coverage             | staffing                   | Compare coverage by interval; Respect hard and soft constraints; Optimize without hiding tradeoffs   |
+| Workforce Management     | intraday         | Real-Time Operations              | forecasting, scheduling    | Establish data freshness; Select proportionate interventions; Separate recovery from explanation     |
+| Workforce Management     | capacity         | Capacity Planning                 | staffing, forecasting      | Convert workload into productive FTE; Model hiring cohorts; Compare uncertainty scenarios            |
+| Excel & Spreadsheets     | excel            | Excel Foundations                 | None                       | Cells, types and references; Use absolute references; Audit blank and invalid inputs                 |
+| Excel & Spreadsheets     | formulas         | Advanced Excel Formulas           | excel                      | Aggregate by condition; Handle lookup cardinality; Make calculations readable with LET               |
+| Excel & Spreadsheets     | power-query      | Power Query & Data Cleaning       | excel                      | Set types before transforming; Validate joins; Design refresh contracts                              |
+| Excel & Spreadsheets     | pivots           | PivotTables & Analysis            | excel                      | Choose the grain; Rebuild ratios from totals; Control filters and refresh                            |
+| Excel & Spreadsheets     | power-pivot      | Power Pivot & Data Models         | pivots                     | Separate facts and dimensions; Understand filter context; Avoid ambiguous relationships              |
+| Excel & Spreadsheets     | excel-dashboards | Excel Dashboards                  | formulas, pivots           | Start with a decision; Encode comparisons honestly; Engineer a reliable refresh                      |
+| Data & Analytics         | sql              | SQL Foundations & Querying        | None                       | Select and filter rows; Group and aggregate; Control join multiplication                             |
+| Data & Analytics         | data-analysis    | Data Analysis with Python         | python, sql                | Inspect before cleaning; Validate grouped results; Build reproducible analyses                       |
+| Data & Analytics         | statistics       | Statistics for Decisions          | None                       | Choose a meaningful summary; Separate samples from populations; Interpret tests cautiously           |
+| Data & Analytics         | power-bi         | Power BI Reporting                | power-pivot                | Model before visualizing; Use visual context; Review access and refresh                              |
+| Data & Analytics         | dax              | DAX & Analytical Measures         | power-bi                   | Write a base measure; Calculate ratios safely; Change context deliberately                           |
+| Data & Analytics         | storytelling     | Data Visualization & Storytelling | statistics                 | Match the chart to the question; Show uncertainty and context; Separate observation from causation   |
+| Software Development     | python           | Python Programming                | None                       | Names, values and conversion; Functions and boundaries; Test errors and invariants                   |
+| Software Development     | html-css         | HTML & CSS                        | None                       | Use semantic structure; Design fluid layouts; Support focus and reduced motion                       |
+| Software Development     | javascript       | JavaScript & Browser Logic        | html-css                   | Understand values and equality; Handle events and state; Coordinate asynchronous work                |
+| Software Development     | typescript       | TypeScript                        | javascript                 | Describe a data contract; Narrow unknown values; Model states that cannot conflict                   |
+| Software Development     | react            | React Applications                | typescript                 | Render from state; Use effects for synchronization; Preserve identity and boundaries                 |
+| Software Development     | node-api         | Node.js & APIs                    | javascript                 | Define an HTTP contract; Validate at the boundary; Handle retries and idempotency                    |
+| AI & Intelligent Systems | ai-foundations   | AI Foundations                    | None                       | Distinguish rules and learned models; Define an evaluation target; Plan a human fallback             |
+| AI & Intelligent Systems | genai            | Generative AI & Prompting         | ai-foundations             | Specify task and constraints; Retrieve before generating; Evaluate with a fixed rubric               |
+| AI & Intelligent Systems | machine-learning | Machine Learning                  | statistics, python         | Split data by the prediction setting; Fit preprocessing on training data; Compare against a baseline |
+| AI & Intelligent Systems | agents           | AI Agents & Tool Use              | genai, node-api            | Choose a workflow before an agent; Constrain tool authority; Bound execution and evaluate traces     |
+| AI & Intelligent Systems | mcp              | MCP & Tool Integration            | agents                     | Separate protocol roles; Validate tool schemas; Treat remote content as untrusted                    |
+| AI & Intelligent Systems | responsible-ai   | Responsible AI & Evaluation       | ai-foundations, statistics | Minimize sensitive data; Examine subgroup outcomes; Create accountable release gates                 |
+| Automation & Delivery    | git              | Git & GitHub                      | None                       | Track focused changes; Use branches for review; Recover with the right operation                     |
+| Automation & Delivery    | playwright       | Playwright Browser Testing        | javascript                 | Test user-visible behavior; Test state across refresh; Exercise responsive and failure paths         |
+| Automation & Delivery    | testing          | Software Testing & Quality        | javascript                 | Test observable contracts; Balance test layers; Use release evidence honestly                        |
+| Automation & Delivery    | power-automate   | Power Automate Workflows          | None                       | Define trigger and action contracts; Prevent duplicate processing; Design observable failure paths   |
+| Automation & Delivery    | devops           | Deployment & DevOps               | git, testing               | Separate build and deployment; Automate checks in CI; Plan rollback and cache updates                |
+| Automation & Delivery    | web-security     | Web Security Foundations          | html-css, javascript       | Treat input as data; Minimize stored sensitive data; Constrain capabilities                          |

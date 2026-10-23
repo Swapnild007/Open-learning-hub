@@ -1,0 +1,76 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft test:e2e
+> playwright test
+
+[2m[WebServer] [22m(node:296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22mnpm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[2m[WebServer] [22m(node:309) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:309) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 38 tests using 2 workers
+
+(node:330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:329) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop] › tests/e2e/learner.spec.ts:8:1 › catalog discovery, search and course path work (1.7s)
+  ✓   3 [desktop] › tests/e2e/learner.spec.ts:34:1 › assessments, assignments, capstone, bookmarks and refresh persistence (4.5s)
+  ✓   4 [desktop] › tests/e2e/learner.spec.ts:95:1 › progress export/import restores state; invalid import preserves it (1.8s)
+  ✓   5 [desktop] › tests/e2e/learner.spec.ts:138:1 › practice engine executes SQLite and validates safe fallbacks (1.8s)
+  ✓   6 [desktop] › tests/e2e/learner.spec.ts:176:1 › global search indexes explanations and handles empty results (1.1s)
+  ✓   7 [desktop] › tests/e2e/learner.spec.ts:188:1 › all course and lesson routes resolve without horizontal overflow or console errors (8.2s)
+  ✓   8 [desktop] › tests/e2e/learner.spec.ts:210:1 › primary pages have no serious accessibility violations in both themes (26.9s)
+  ✓   9 [desktop] › tests/e2e/learner.spec.ts:229:1 › mobile menu and keyboard navigation work (1.3s)
+  ✓  10 [desktop] › tests/e2e/learner.spec.ts:264:1 › cached lessons, SQL and progress survive offline reload (3.5s)
+  ✓  11 [desktop] › tests/e2e/learner.spec.ts:299:1 › all 36 pilots permit assessed lesson completion and capstone self-review (1.1m)
+  ✓  12 [desktop] › tests/e2e/learner.spec.ts:346:1 › interactive guide, flashcard, diagram and ordering controls are usable (1.4s)
+  ✓  13 [desktop] › tests/e2e/learner.spec.ts:388:1 › malformed local state is preserved and import cannot render hostile markup (1.4s)
+  ✓  14 [desktop] › tests/e2e/learner.spec.ts:422:1 › settings controls and generated legacy readers preserve usable state (2.2s)
+(node:955) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:955) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [android] › tests/e2e/learner.spec.ts:8:1 › catalog discovery, search and course path work (1.8s)
+  ✓   2 [desktop] › tests/e2e/python.spec.ts:45:1 › six representative Python journeys execute wrong code, correct solutions, recall gates and notes (2.1m)
+  ✓  16 [android] › tests/e2e/learner.spec.ts:34:1 › assessments, assignments, capstone, bookmarks and refresh persistence (3.7s)
+  ✓  18 [android] › tests/e2e/learner.spec.ts:95:1 › progress export/import restores state; invalid import preserves it (1.3s)
+  ✓  19 [android] › tests/e2e/learner.spec.ts:138:1 › practice engine executes SQLite and validates safe fallbacks (1.5s)
+  ✓  20 [android] › tests/e2e/learner.spec.ts:176:1 › global search indexes explanations and handles empty results (735ms)
+  ✓  21 [android] › tests/e2e/learner.spec.ts:188:1 › all course and lesson routes resolve without horizontal overflow or console errors (5.9s)
+  ✓  17 [desktop] › tests/e2e/python.spec.ts:147:1 › worker timeout, stop, fresh globals and offline notes survive without external execution (33.9s)
+  ✓  22 [android] › tests/e2e/learner.spec.ts:210:1 › primary pages have no serious accessibility violations in both themes (22.0s)
+  ✓  24 [android] › tests/e2e/learner.spec.ts:229:1 › mobile menu and keyboard navigation work (2.3s)
+  ✓  23 [desktop] › tests/e2e/python.spec.ts:244:1 › corrupt notebook is preserved; validated backup import restores notes (3.0s)
+  ✓  25 [android] › tests/e2e/learner.spec.ts:264:1 › cached lessons, SQL and progress survive offline reload (3.5s)
+  ✓  26 [desktop] › tests/e2e/python.spec.ts:302:1 › Python studio is responsive, keyboard reachable and accessible in both themes (6.8s)
+  ✓  28 [desktop] › tests/e2e/python.spec.ts:340:1 › beginner examples are highlighted and editable; exact streams, syntax errors and behavior gates work (33.7s)
+  ✓  29 [desktop] › tests/e2e/python.spec.ts:445:1 › preserved static Python URLs clearly lead to the executable studio (1.8s)
+(node:1550) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1550) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  27 [android] › tests/e2e/learner.spec.ts:299:1 › all 36 pilots permit assessed lesson completion and capstone self-review (50.8s)
+  ✓  31 [android] › tests/e2e/learner.spec.ts:346:1 › interactive guide, flashcard, diagram and ordering controls are usable (2.2s)
+  ✓  32 [android] › tests/e2e/learner.spec.ts:388:1 › malformed local state is preserved and import cannot render hostile markup (2.7s)
+  ✓  33 [android] › tests/e2e/learner.spec.ts:422:1 › settings controls and generated legacy readers preserve usable state (3.7s)
+  ✓  30 [android] › tests/e2e/python.spec.ts:45:1 › six representative Python journeys execute wrong code, correct solutions, recall gates and notes (2.0m)
+  ✓  34 [android] › tests/e2e/python.spec.ts:147:1 › worker timeout, stop, fresh globals and offline notes survive without external execution (31.8s)
+  ✓  35 [android] › tests/e2e/python.spec.ts:244:1 › corrupt notebook is preserved; validated backup import restores notes (2.4s)
+  ✓  36 [android] › tests/e2e/python.spec.ts:302:1 › Python studio is responsive, keyboard reachable and accessible in both themes (7.9s)
+  ✓  37 [android] › tests/e2e/python.spec.ts:340:1 › beginner examples are highlighted and editable; exact streams, syntax errors and behavior gates work (21.7s)
+  ✓  38 [android] › tests/e2e/python.spec.ts:445:1 › preserved static Python URLs clearly lead to the executable studio (1.9s)
+
+  38 passed (6.6m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

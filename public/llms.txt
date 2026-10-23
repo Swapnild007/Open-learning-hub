@@ -1,0 +1,8 @@
+# Open Learning Hub
+
+> Original, local-first course pilots and practice tools.
+
+The development curriculum has 36 course pilots in six tracks: Workforce Management, Excel & Spreadsheets, Data & Analytics, Software Development, AI & Intelligent Systems, and Automation & Delivery.
+Each pilot has three authored topic lessons, checkpoints, assignments and a capstone brief. These are not yet comprehensive beginner-to-advanced courses. No professional certificates or verified grades are issued.
+Progress stays in the current browser and can be exported. The static app has no mandatory accounts, keys or server execution.
+Historical WFM, Python and glossary material remains at its original HTML routes. Hash routes provide application navigation.

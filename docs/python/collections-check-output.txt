@@ -1,0 +1,97 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft check
+> npm run lint:python && npm run test && npm run coverage:python && npm run verify:python && npm run build
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft lint:python
+> eslint src/python public/python-worker.js scripts/*python*.mjs tests/python.test.ts tests/e2e/python.spec.ts
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft test
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/scratch/da05aadd3f5b/Open-learning-hub
+
+
+ Test Files  4 passed (4)
+      Tests  12 passed (12)
+   Start at  19:28:10
+   Duration  639ms (transform 58%, tests 20%, import 17%, worker 5%)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft coverage:python
+> node --experimental-strip-types scripts/python-coverage.mjs
+
+7 authored chapters; 17 required topic groups have no dedicated chapter. Full course acceptance: INCOMPLETE.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft verify:python
+> npm run prepare:python && node --experimental-strip-types scripts/verify-python.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft prepare:python
+> node scripts/prepare-python.mjs
+
+Verified Python package pandas 2.2.3
+Verified Python package numpy 2.0.2
+Verified Python package python-dateutil 2.9.0.post0
+Verified Python package six 1.16.0
+Verified Python package pytz 2024.1
+Loading numpy, pandas, python-dateutil, pytz, six
+Loaded numpy, pandas, python-dateutil, pytz, six
+Verified variables: 2 outputs, 2 passing solutions, 2 rejected starters
+Verified loops: 2 outputs, 2 passing solutions, 2 rejected starters
+Verified functions: 2 outputs, 2 passing solutions, 2 rejected starters
+Verified collections: 2 outputs, 2 passing solutions, 2 rejected starters
+Verified exceptions: 2 outputs, 2 passing solutions, 2 rejected starters
+Verified objects: 2 outputs, 2 passing solutions, 2 rejected starters
+Verified pandas: 2 outputs, 2 passing solutions, 2 rejected starters
+PASS: 49 executable curriculum checks using Python 3.12.7
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft prebuild
+> npm run prepare:python
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft prepare:python
+> node scripts/prepare-python.mjs
+
+Verified Python package pandas 2.2.3
+Verified Python package numpy 2.0.2
+Verified Python package python-dateutil 2.9.0.post0
+Verified Python package six 1.16.0
+Verified Python package pytz 2024.1
+
+> open-learning-hub@2.0.0-draft build
+> node scripts/preserve-legacy.mjs && tsc --noEmit && vite build && node scripts/build-sw.mjs
+
+Preserved 17 legacy Python lessons; repaired display escaping in served copies only.
+vite v7.3.7 building client environment for production...
+transforming...
+[plugin vite:resolve] Module "fs" has been externalized for browser compatibility, imported by "/workspace/scratch/da05aadd3f5b/Open-learning-hub/node_modules/sql.js/dist/sql-wasm.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin vite:resolve] Module "path" has been externalized for browser compatibility, imported by "/workspace/scratch/da05aadd3f5b/Open-learning-hub/node_modules/sql.js/dist/sql-wasm.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin vite:resolve] Module "crypto" has been externalized for browser compatibility, imported by "/workspace/scratch/da05aadd3f5b/Open-learning-hub/node_modules/sql.js/dist/sql-wasm.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 1631 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/favicon-BWKWEKIJ.svg         0.21 kB │ gzip:   0.17 kB
+dist/index.html                          1.07 kB │ gzip:   0.57 kB
+dist/assets/sql.worker-DaEchcu-.js      45.15 kB
+dist/assets/sql-wasm-C1U8OeUW.wasm     659.81 kB │ gzip: 322.99 kB
+dist/assets/index-B1nXNJeT.css          42.40 kB │ gzip:   9.90 kB
+dist/assets/index-BZh22usg.js          328.84 kB │ gzip: 107.68 kB
+dist/assets/PythonAcademy-D9Y3Egvj.js  552.02 kB │ gzip: 185.78 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 8.01s
+Offline cache aa7eb3c55aef: 31 shell resources.
