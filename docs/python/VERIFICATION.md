@@ -1,6 +1,8 @@
-# Python Academy verification
+# Python Academy verification — approved six-chapter baseline
 
-The current follow-up supersedes the earlier 34-test checkpoint. On 23 October 2026 the final source fingerprint `f4ef18990ac5` passed:
+For the subsequent seven-chapter collections milestone and private Android workflow, see [CURRICULUM-PROGRESS.md](CURRICULUM-PROGRESS.md). The results below record the approved `3cacc30` file tree published as `15d0866`.
+
+That follow-up supersedes the earlier 34-test checkpoint. On 23 October 2026 the final source fingerprint `f4ef18990ac5` passed:
 
 - Clean dependency installation and zero-vulnerability audit.
 - Scoped lint, 12 unit/content/storage checks and strict TypeScript/production build.

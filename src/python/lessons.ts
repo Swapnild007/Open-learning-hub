@@ -1,4 +1,5 @@
 import type { PythonLesson } from "./types";
+import { collectionsLesson } from "./collections.ts";
 const pythonReference = (chapter: string) => ({
   title: `Python tutorial: ${chapter}`,
   url: `https://docs.python.org/3.12/tutorial/${chapter}.html`,
@@ -420,6 +421,7 @@ export const pythonLessons: PythonLesson[] = [
     ],
     references: [pythonReference("controlflow")],
   },
+  collectionsLesson,
   {
     id: "exceptions",
     title: "Exceptions, validation and useful failures",

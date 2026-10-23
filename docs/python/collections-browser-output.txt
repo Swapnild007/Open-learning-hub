@@ -1,0 +1,44 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> open-learning-hub@2.0.0-draft test:e2e
+> playwright test tests/e2e/python.spec.ts
+
+[2m[WebServer] [22m(node:299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22mnpm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[2m[WebServer] [22m(node:312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 2 workers
+
+(node:332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [android] › tests/e2e/python.spec.ts:45:1 › all published Python journeys execute wrong code, correct solutions, recall gates and notes (2.1m)
+  ✓   2 [desktop] › tests/e2e/python.spec.ts:45:1 › all published Python journeys execute wrong code, correct solutions, recall gates and notes (2.4m)
+  ✓   3 [android] › tests/e2e/python.spec.ts:147:1 › worker timeout, stop, fresh globals and offline notes survive without external execution (41.8s)
+  ✓   5 [android] › tests/e2e/python.spec.ts:244:1 › corrupt notebook is preserved; validated backup import restores notes (2.4s)
+  ✓   4 [desktop] › tests/e2e/python.spec.ts:147:1 › worker timeout, stop, fresh globals and offline notes survive without external execution (38.0s)
+  ✓   6 [android] › tests/e2e/python.spec.ts:302:1 › Python studio is responsive, keyboard reachable and accessible in both themes (9.2s)
+  ✓   7 [desktop] › tests/e2e/python.spec.ts:244:1 › corrupt notebook is preserved; validated backup import restores notes (2.7s)
+  ✓   9 [desktop] › tests/e2e/python.spec.ts:302:1 › Python studio is responsive, keyboard reachable and accessible in both themes (5.7s)
+  ✓   8 [android] › tests/e2e/python.spec.ts:340:1 › beginner examples are highlighted and editable; exact streams, syntax errors and behavior gates work (23.9s)
+  ✓  11 [android] › tests/e2e/python.spec.ts:445:1 › preserved static Python URLs clearly lead to the executable studio (2.1s)
+  ✓  10 [desktop] › tests/e2e/python.spec.ts:340:1 › beginner examples are highlighted and editable; exact streams, syntax errors and behavior gates work (24.8s)
+  ✓  13 [desktop] › tests/e2e/python.spec.ts:445:1 › preserved static Python URLs clearly lead to the executable studio (1.7s)
+  ✓  12 [android] › tests/e2e/python.spec.ts:462:1 › collections rejects sorted-only deduplication and input mutation (15.2s)
+  ✓  14 [desktop] › tests/e2e/python.spec.ts:462:1 › collections rejects sorted-only deduplication and input mutation (14.9s)
+
+  14 passed (3.9m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

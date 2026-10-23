@@ -29,8 +29,8 @@ export default function Overview({
         <span className="eyebrow">PYTHON · EXECUTABLE LEARNING</span>
         <h1>Learn Python by running it.</h1>
         <p>
-          Six foundation chapters with editable code, real Python output,
-          behavior checks and personal notes saved on this device.
+          Foundation chapters with editable code, real Python output, behavior
+          checks and personal notes saved on this device.
         </p>
         <a className="primary" href="#/python/variables">
           Start the beginner lesson

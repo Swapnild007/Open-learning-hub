@@ -80,8 +80,8 @@ export default function Home({ progress }: { progress: Progress }) {
         <h2>Think it through. Run it for real.</h2>
         <p>
           Detailed explanations, executable Python, behavior checks and a
-          personal notebook. Six chapters are available in the development
-          edition; the full course remains in progress.
+          personal notebook. Foundation chapters are available in the
+          development edition; the full course remains in progress.
         </p>
         <a className="primary" href="#/python">
           Enter the Python studio →

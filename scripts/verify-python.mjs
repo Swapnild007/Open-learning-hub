@@ -37,6 +37,8 @@ function execute(code, tests) {
   }
 }
 const recallProofs = {
+  collections:
+    "a = [[1]]\nb = a.copy()\nb[0].append(2)\nprint(1 if a == [[1, 2]] else 0)",
   variables: "x = 4\ny = x + 1\nx = 9\nprint(0 if y == 5 else 1)",
   loops:
     "accepted = [x for x in [-1, 0, 1] if x >= 0]\nprint(1 if accepted == [0, 1] else 0)",

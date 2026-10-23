@@ -7,7 +7,7 @@ const required = {
   "Strings and input/output": "variables",
   Conditionals: "loops",
   "Loops and comprehensions": "loops",
-  "Lists, tuples, dictionaries and sets": null,
+  "Lists, tuples, dictionaries and sets": "collections",
   "Functions and scope": "functions",
   "Modules and packages": null,
   "Standard library": null,

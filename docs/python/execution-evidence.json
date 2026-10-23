@@ -1,6 +1,6 @@
 {
   "runtime": "Pyodide 0.27.7 / CPython 3.12",
-  "checks": 42,
+  "checks": 49,
   "lessons": [
     {
       "id": "variables",
@@ -18,6 +18,13 @@
     },
     {
       "id": "functions",
+      "examples": 2,
+      "solutions": 2,
+      "rejectedStarters": 2,
+      "recallProofs": 1
+    },
+    {
+      "id": "collections",
       "examples": 2,
       "solutions": 2,
       "rejectedStarters": 2,

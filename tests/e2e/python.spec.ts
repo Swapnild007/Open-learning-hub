@@ -28,7 +28,7 @@ async function check(page: Page) {
     page.getByRole("button", { name: "Run code", exact: true }),
   ).toBeEnabled({ timeout: 60000 });
 }
-test("six representative Python journeys execute wrong code, correct solutions, recall gates and notes", async ({
+test("all published Python journeys execute wrong code, correct solutions, recall gates and notes", async ({
   page,
 }) => {
   test.setTimeout(180000);
@@ -423,4 +423,43 @@ test("preserved static Python URLs clearly lead to the executable studio", async
       page.getByRole("button", { name: "Run code", exact: true }),
     ).toBeEnabled();
   }
+});
+
+test("collections rejects sorted-only deduplication and input mutation", async ({
+  page,
+}) => {
+  test.setTimeout(90000);
+  await page.goto("/#/python/collections");
+  await codeTab(page);
+  await setCode(
+    page,
+    "def unique_names(names):\n    return sorted(set(name.strip() for name in names if name.strip()))",
+  );
+  await check(page);
+  await expect(page.getByLabel("Python stderr", { exact: true })).toContainText(
+    "AssertionError",
+  );
+  await setCode(
+    page,
+    "def unique_names(names):\n    return list(dict.fromkeys(name.strip() for name in names if name.strip()))",
+  );
+  await check(page);
+  await expect(page.locator(".python-lab")).toContainText(
+    "✓ Behavior checks passed.",
+  );
+  await page.getByLabel("Choose a practice task").selectOption("1");
+  await setCode(
+    page,
+    'def team_totals(records):\n    for record in records:\n        record.clear()\n    return {"North": 7, "South": 0}',
+  );
+  await check(page);
+  await expect(page.getByLabel("Python stderr", { exact: true })).toContainText(
+    "Preserve every source record",
+  );
+  const lesson = pythonLessons.find((lesson) => lesson.id === "collections")!;
+  await setCode(page, lesson.exercises[1].solution);
+  await check(page);
+  await expect(page.locator(".python-lab")).toContainText(
+    "✓ Behavior checks passed.",
+  );
 });

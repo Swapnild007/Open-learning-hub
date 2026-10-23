@@ -90,10 +90,16 @@
     },
     {
       "topic": "Lists, tuples, dictionaries and sets",
-      "status": "not authored",
-      "lessonURL": null,
-      "examples": [],
-      "behaviorTests": [],
+      "status": "foundation chapter implemented; wider topic acceptance pending",
+      "lessonURL": "#/python/collections",
+      "examples": [
+        "A shallow copy still shares nested objects",
+        "Accumulate totals and print a stable report"
+      ],
+      "behaviorTests": [
+        "collections-unique",
+        "collections-totals"
+      ],
       "review": "pending"
     },
     {
@@ -335,6 +341,17 @@
       "recall": 1,
       "referenceURLs": [
         "https://docs.python.org/3.12/tutorial/controlflow.html"
+      ]
+    },
+    {
+      "id": "collections",
+      "url": "#/python/collections",
+      "words": 798,
+      "examples": 2,
+      "exercises": 2,
+      "recall": 1,
+      "referenceURLs": [
+        "https://docs.python.org/3.12/tutorial/datastructures.html"
       ]
     },
     {

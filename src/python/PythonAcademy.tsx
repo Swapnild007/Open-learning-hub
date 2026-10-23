@@ -208,13 +208,12 @@ export default function PythonAcademy({
               lesson without unlocking it.
             </p>
             <p>
-              Six foundation chapters are available in this implementation
-              checkpoint. This is{" "}
+              {pythonLessons.length} foundation chapters are available in this
+              implementation checkpoint. This is{" "}
               <strong>not yet the complete beginner-to-advanced course</strong>:
-              collections, modules, files, packaging, typing/testing, iterators,
-              decorators, concurrency, NumPy, visualization, HTTP, automation
-              and the reporting capstone still need full chapters and
-              assessment.
+              modules, files, packaging, typing/testing, iterators, decorators,
+              concurrency, NumPy, visualization, HTTP, automation and the
+              reporting capstone still need full chapters and assessment.
             </p>
             {book.lastLesson &&
               pythonLessons.some((l) => l.id === book.lastLesson) && (
